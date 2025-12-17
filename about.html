@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="About Elysian Hotel. Calm luxury and thoughtful hospitality." />
+    <title>Elysian Hotel — About</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23000' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'/%3E%3C/svg%3E" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: 'class' }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/tailwind.css" />
+  </head>
+  <body class="bg-neutral-50 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100 font-[Inter]">
+    <header id="navbar" class="relative z-50 transition-all">
+      <div class="mx-auto max-w-7xl px-4">
+        <div class="flex h-16 items-center justify-between">
+          <a href="index.html" class="flex items-center gap-2">
+            <svg class="h-8 w-8 text-neutral-900 dark:text-neutral-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            <span class="text-lg font-semibold">Elysian Hotel</span>
+          </a>
+          <nav class="hidden lg:flex items-center gap-8">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="rooms.html" class="nav-link">Rooms</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <button id="theme-toggle" aria-label="Toggle theme" class="rounded-full p-2 transition bg-white/80 dark:bg-neutral-800 hover:bg-white dark:hover:bg-neutral-700">
+              <span id="theme-icon" class="block h-5 w-5">
+                <!-- Sun icon (shown in light mode) -->
+                <svg id="sun-icon" class="w-5 h-5 text-neutral-900 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+                <!-- Moon icon (shown in dark mode) -->
+                <svg id="moon-icon" class="w-5 h-5 text-neutral-100 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                </svg>
+              </span>
+            </button>
+            <a href="login.html" class="nav-link px-4 py-2 rounded-full text-sm font-medium">Login</a>
+            <a href="rooms.html" class="neo-btn px-4 py-2 rounded-full text-sm font-medium">Book Now</a>
+          </nav>
+          <button id="mobile-toggle" class="lg:hidden rounded-full p-2 bg-white/80 dark:bg-neutral-800 hover:bg-white dark:hover:bg-neutral-700">
+            <svg class="h-5 w-5 text-neutral-900 dark:text-neutral-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="lg:hidden hidden">
+        <div class="mx-auto max-w-7xl px-4 pb-4">
+          <div class="glass-card rounded-2xl p-4">
+            <div class="grid gap-3 text-center">
+              <a href="index.html" class="nav-link py-2">Home</a>
+              <a href="rooms.html" class="nav-link py-2">Rooms</a>
+              <a href="about.html" class="nav-link py-2">About</a>
+              <a href="contact.html" class="nav-link py-2">Contact</a>
+              <div class="flex items-center justify-center gap-3">
+                <button id="theme-toggle-m" class="rounded-full p-2 transition bg-white/80 dark:bg-neutral-800 hover:bg-white dark:hover:bg-neutral-700">
+                  <span id="theme-icon-m" class="block h-5 w-5">
+                    <!-- Sun icon (shown in light mode) -->
+                    <svg id="sun-icon-m" class="w-5 h-5 text-neutral-900 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                    <!-- Moon icon (shown in dark mode) -->
+                    <svg id="moon-icon-m" class="w-5 h-5 text-neutral-100 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                  </span>
+                </button>
+                <a href="login.html" class="nav-link px-4 py-2 rounded-full text-sm font-medium">Login</a>
+                <a href="rooms.html" class="neo-btn px-4 py-2 rounded-full text-sm font-medium">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-12 md:pt-16">
+      <!-- Hero Section -->
+      <section class="mx-auto max-w-7xl px-4 reveal">
+        <div class="flex flex-col items-center text-center gap-6">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight">Our Story</h1>
+          <p class="max-w-3xl text-neutral-600 dark:text-neutral-300">
+            Elysian Hotel was founded to create a quiet haven within the city. We believe in calm spaces, thoughtful details, and hospitality that respects your rhythm.
+          </p>
+          <div class="flex flex-wrap justify-center gap-4 mt-4">
+            <div class="glass-card rounded-xl px-6 py-4">
+              <div class="text-2xl font-semibold mb-1">2018</div>
+              <div class="text-sm text-neutral-600 dark:text-neutral-300">Founded</div>
+            </div>
+            <div class="glass-card rounded-xl px-6 py-4">
+              <div class="text-2xl font-semibold mb-1">50+</div>
+              <div class="text-sm text-neutral-600 dark:text-neutral-300">Rooms</div>
+            </div>
+            <div class="glass-card rounded-xl px-6 py-4">
+              <div class="text-2xl font-semibold mb-1">10K+</div>
+              <div class="text-sm text-neutral-600 dark:text-neutral-300">Guests</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission & Vision -->
+      <section class="mx-auto max-w-7xl px-4 mt-20 reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div class="glass-card rounded-2xl p-8 md:p-10">
+            <div class="h-16 w-16 rounded-2xl bg-neutral-900 dark:bg-neutral-100 mb-6 flex items-center justify-center">
+              <span class="text-2xl">🎯</span>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-semibold mb-4">Our Mission</h2>
+            <p class="text-neutral-600 dark:text-neutral-300 leading-relaxed">
+              To provide a sanctuary of calm luxury where every detail is thoughtfully considered. We create spaces that restore, inspire, and allow you to move at your own pace.
+            </p>
+          </div>
+          <div class="glass-card rounded-2xl p-8 md:p-10">
+            <div class="h-16 w-16 rounded-2xl bg-neutral-900 dark:bg-neutral-100 mb-6 flex items-center justify-center">
+              <span class="text-2xl">✨</span>
+            </div>
+            <h2 class="text-2xl md:text-3xl font-semibold mb-4">Our Vision</h2>
+            <p class="text-neutral-600 dark:text-neutral-300 leading-relaxed">
+              To redefine hospitality through minimalism, sustainability, and genuine care. We envision a future where luxury means tranquility, not excess.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Core Principles -->
+      <section class="mx-auto max-w-7xl px-4 mt-20 reveal">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-semibold mb-4">Our Principles</h2>
+          <p class="text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
+            The values that guide every decision we make and every experience we create.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="glass-card rounded-2xl p-6 text-center card-hover">
+            <div class="h-20 w-20 rounded-2xl bg-neutral-900 dark:bg-neutral-100 mx-auto mb-4 flex items-center justify-center">
+              <span class="text-3xl">🎨</span>
+            </div>
+            <h3 class="font-semibold text-lg mb-2">Clarity Over Excess</h3>
+            <p class="text-sm text-neutral-600 dark:text-neutral-300">
+              Every element serves a purpose. We believe in the power of thoughtful simplicity.
+            </p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 text-center card-hover">
+            <div class="h-20 w-20 rounded-2xl bg-neutral-900 dark:bg-neutral-100 mx-auto mb-4 flex items-center justify-center">
+              <span class="text-3xl">🌿</span>
+            </div>
+            <h3 class="font-semibold text-lg mb-2">Comfort That Restores</h3>
+            <p class="text-sm text-neutral-600 dark:text-neutral-300">
+              Spaces designed to help you unwind, recharge, and find your center again.
+            </p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 text-center card-hover">
+            <div class="h-20 w-20 rounded-2xl bg-neutral-900 dark:bg-neutral-100 mx-auto mb-4 flex items-center justify-center">
+              <span class="text-3xl">🤝</span>
+            </div>
+            <h3 class="font-semibold text-lg mb-2">Service With Quiet Care</h3>
+            <p class="text-sm text-neutral-600 dark:text-neutral-300">
+              Attentive without being intrusive. We're here when you need us, invisible when you don't.
+            </p>
+          </div>
+          <div class="glass-card rounded-2xl p-6 text-center card-hover">
+            <div class="h-20 w-20 rounded-2xl bg-neutral-900 dark:bg-neutral-100 mx-auto mb-4 flex items-center justify-center">
+              <span class="text-3xl">🌍</span>
+            </div>
+            <h3 class="font-semibold text-lg mb-2">Sustainable Choices</h3>
+            <p class="text-sm text-neutral-600 dark:text-neutral-300">
+              Responsible luxury that honors both our guests and our planet.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Story Timeline -->
+      <section class="mx-auto max-w-7xl px-4 mt-20 reveal">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-semibold mb-4">Our Journey</h2>
+          <p class="text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">
+            From a vision to a reality, here's how Elysian Hotel came to be.
+          </p>
+        </div>
+        <div class="relative">
+          <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-neutral-200 dark:bg-neutral-800 hidden md:block"></div>
+          <div class="space-y-12">
+            <div class="relative flex flex-col md:flex-row items-start md:items-center gap-6">
+              <div class="md:w-1/2 md:pr-12 md:text-right">
+                <div class="glass-card rounded-2xl p-6">
+                  <div class="text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-2">2018</div>
+                  <h3 class="text-xl font-semibold mb-2">The Vision</h3>
+                  <p class="text-sm text-neutral-600 dark:text-neutral-300">
+                    Founded with a simple idea: luxury doesn't need to be loud. We began designing spaces that prioritize peace and restoration.
+                  </p>
+                </div>
+              </div>
+              <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-neutral-900 dark:bg-neutral-100 border-4 border-neutral-50 dark:border-neutral-900 z-10"></div>
+              <div class="md:w-1/2 md:pl-12">
+                <div class="rounded-2xl overflow-hidden h-48 md:h-64">
+                  <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop" alt="Hotel Construction" class="w-full h-full object-cover" loading="lazy" />
+                </div>
+              </div>
+            </div>
+            <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center gap-6">
+              <div class="md:w-1/2 md:pl-12 md:text-left">
+                <div class="glass-card rounded-2xl p-6">
+                  <div class="text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-2">2020</div>
+                  <h3 class="text-xl font-semibold mb-2">Grand Opening</h3>
+                  <p class="text-sm text-neutral-600 dark:text-neutral-300">
+                    Opened our doors to welcome our first guests. The response was overwhelming—people were seeking exactly what we offered.
+                  </p>
+                </div>
+              </div>
+              <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-neutral-900 dark:bg-neutral-100 border-4 border-neutral-50 dark:border-neutral-900 z-10"></div>
+              <div class="md:w-1/2 md:pr-12">
+                <div class="rounded-2xl overflow-hidden h-48 md:h-64">
+                  <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&h=600&fit=crop" alt="Hotel Opening" class="w-full h-full object-cover" loading="lazy" />
+                </div>
+              </div>
+            </div>
+            <div class="relative flex flex-col md:flex-row items-start md:items-center gap-6">
+              <div class="md:w-1/2 md:pr-12 md:text-right">
+                <div class="glass-card rounded-2xl p-6">
+                  <div class="text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-2">2023</div>
+                  <h3 class="text-xl font-semibold mb-2">Sustainability Milestone</h3>
+                  <p class="text-sm text-neutral-600 dark:text-neutral-300">
+                    Achieved carbon-neutral status and launched our zero-waste initiative, proving luxury and sustainability can coexist.
+                  </p>
+                </div>
+              </div>
+              <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-neutral-900 dark:bg-neutral-100 border-4 border-neutral-50 dark:border-neutral-900 z-10"></div>
+              <div class="md:w-1/2 md:pl-12">
+                <div class="rounded-2xl overflow-hidden h-48 md:h-64">
+                  <img src="https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?w=800&h=600&fit=crop" alt="Sustainable Hotel" class="w-full h-full object-cover" loading="lazy" />
+                </div>
+              </div>
+            </div>
+            <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center gap-6">
+              <div class="md:w-1/2 md:pl-12 md:text-left">
+                <div class="glass-card rounded-2xl p-6">
+                  <div class="text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-2">Today</div>
+                  <h3 class="text-xl font-semibold mb-2">Continuing Excellence</h3>
+                  <p class="text-sm text-neutral-600 dark:text-neutral-300">
+                    We continue to evolve, always staying true to our core values while finding new ways to exceed expectations.
+                  </p>
+                </div>
+              </div>
+              <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-neutral-900 dark:bg-neutral-100 border-4 border-neutral-50 dark:border-neutral-900 z-10"></div>
+              <div class="md:w-1/2 md:pr-12">
+                <div class="rounded-2xl overflow-hidden h-48 md:h-64">
+                  <img src="https://images.unsplash.com/photo-1559599078-9d29f0c033d5?w=800&h=600&fit=crop" alt="Elysian Hotel Today" class="w-full h-full object-cover" loading="lazy" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- What Sets Us Apart -->
+      <section class="mx-auto max-w-7xl px-4 mt-20 reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          <div class="lg:col-span-2">
+            <div class="rounded-2xl overflow-hidden h-96">
+              <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1200&h=800&fit=crop" alt="Hotel Interior" class="w-full h-full object-cover" loading="lazy" />
+            </div>
+          </div>
+          <div class="flex flex-col justify-center gap-6">
+            <div>
+              <h2 class="text-3xl md:text-4xl font-semibold mb-4">What Sets Us Apart</h2>
+              <p class="text-neutral-600 dark:text-neutral-300 mb-6">
+                Every detail is intentional, every space is purposeful, and every stay is memorable.
+              </p>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-start gap-4">
+                <div class="h-12 w-12 rounded-xl bg-neutral-900 dark:bg-neutral-100 flex-shrink-0 flex items-center justify-center">
+                  <span class="text-xl">🏛️</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">Thoughtful Design</h4>
+                  <p class="text-sm text-neutral-600 dark:text-neutral-300">Minimal aesthetics refined for balance and ease.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="h-12 w-12 rounded-xl bg-neutral-900 dark:bg-neutral-100 flex-shrink-0 flex items-center justify-center">
+                  <span class="text-xl">📍</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">Prime Location</h4>
+                  <p class="text-sm text-neutral-600 dark:text-neutral-300">Quiet streets near cultural and business landmarks.</p>
+                </div>
+              </div>
+              <div class="flex items-start gap-4">
+                <div class="h-12 w-12 rounded-xl bg-neutral-900 dark:bg-neutral-100 flex-shrink-0 flex items-center justify-center">
+                  <span class="text-xl">💎</span>
+                </div>
+                <div>
+                  <h4 class="font-semibold mb-1">Attentive Care</h4>
+                  <p class="text-sm text-neutral-600 dark:text-neutral-300">Attentive hospitality that feels effortless.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Statistics -->
+      <section class="mx-auto max-w-7xl px-4 mt-20 reveal">
+        <div class="glass-card rounded-3xl p-8 md:p-12">
+          <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            <div>
+              <div class="text-4xl md:text-5xl font-semibold mb-2">98%</div>
+              <div class="text-sm text-neutral-600 dark:text-neutral-300">Guest Satisfaction</div>
+            </div>
+            <div>
+              <div class="text-4xl md:text-5xl font-semibold mb-2">4.9</div>
+              <div class="text-sm text-neutral-600 dark:text-neutral-300">Average Rating</div>
+            </div>
+            <div>
+              <div class="text-4xl md:text-5xl font-semibold mb-2">50+</div>
+              <div class="text-sm text-neutral-600 dark:text-neutral-300">Luxury Rooms</div>
+            </div>
+            <div>
+              <div class="text-4xl md:text-5xl font-semibold mb-2">24/7</div>
+              <div class="text-sm text-neutral-600 dark:text-neutral-300">Concierge Service</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Call to Action -->
+      <section class="mx-auto max-w-7xl px-4 mt-20 mb-20 reveal">
+        <div class="glass-card rounded-3xl p-8 md:p-12 text-center">
+          <h2 class="text-3xl md:text-4xl font-semibold mb-4">Experience Elysian</h2>
+          <p class="text-lg text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto mb-8">
+            Discover the difference that thoughtful design and genuine care can make. Book your stay and experience calm luxury for yourself.
+          </p>
+          <a href="rooms.html" class="neo-btn px-8 py-4 rounded-full text-base font-medium inline-block">
+            Book Your Stay
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="mt-24 border-t border-neutral-200 dark:border-neutral-800">
+      <div class="mx-auto max-w-7xl px-4 py-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center sm:text-left">
+            <div class="flex items-center justify-center sm:justify-start gap-3">
+              <svg class="h-8 w-8 text-neutral-900 dark:text-neutral-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+              <span class="text-lg font-semibold">Elysian Hotel</span>
+            </div>
+            <p class="mt-3 text-sm text-neutral-600 dark:text-neutral-300">Quiet stays, refined details, and seamless booking.</p>
+          </div>
+          <div class="text-center sm:text-left">
+            <h5 class="font-semibold">Navigation</h5>
+            <ul class="mt-3 space-y-2 text-sm">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="rooms.html" class="nav-link">Rooms</a></li>
+              <li><a href="about.html" class="nav-link">About</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+          </div>
+          <div class="text-center sm:text-left">
+            <h5 class="font-semibold">Policies</h5>
+            <ul class="mt-3 space-y-2 text-sm">
+              <li><a href="#" class="nav-link">Privacy Policy</a></li>
+              <li><a href="#" class="nav-link">Terms of Service</a></li>
+              <li><a href="#" class="nav-link">Cancellation Policy</a></li>
+            </ul>
+          </div>
+          <div class="text-center sm:text-left">
+            <h5 class="font-semibold">Newsletter</h5>
+            <form class="mt-3 flex gap-3 justify-center sm:justify-start">
+              <input type="email" placeholder="Your email" class="input w-full max-w-[210px]" />
+              <button class="neo-btn px-4 py-2 rounded-full text-sm">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <p class="mt-8 text-center text-sm text-neutral-500 dark:text-neutral-400">© 2025 Elysian Hotel</p>
+      </div>
+    </footer>
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
