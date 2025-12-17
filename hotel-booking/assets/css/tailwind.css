@@ -1,0 +1,121 @@
+:root {
+  --brand: #111111;
+  --brand-contrast: #f5f5f5;
+}
+html, body {
+  min-height: 100%;
+}
+.nav-link {
+  color: rgb(82 82 82);
+  transition: color .2s ease;
+}
+.dark .nav-link {
+  color: rgb(212 212 212);
+}
+.nav-link:hover {
+  color: rgb(23 23 23);
+}
+.dark .nav-link:hover {
+  color: rgb(250 250 250);
+}
+.input {
+  appearance: none;
+  background-color: rgb(255 255 255 / 0.9);
+  color: rgb(23 23 23);
+  border-radius: 0.75rem;
+  padding: .75rem 1rem;
+  border: 1px solid rgb(229 229 229);
+  transition: border-color .2s ease, box-shadow .2s ease, background-color .2s ease;
+}
+.dark .input {
+  background-color: rgb(38 38 38 / 0.9);
+  color: rgb(250 250 250);
+  border-color: rgb(64 64 64);
+}
+.input:focus {
+  outline: none;
+  border-color: rgb(163 163 163);
+}
+.neo-hover:hover {
+  box-shadow: inset 0 6px 12px rgb(0 0 0 / .12);
+}
+.neo-btn {
+  background-color: #111111;
+  color: #ffffff;
+  box-shadow: 0 12px 24px rgb(0 0 0 / .16);
+  transition: transform .15s ease, box-shadow .2s ease, background-color .2s ease;
+}
+.neo-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 16px 28px rgb(0 0 0 / .18);
+}
+.dark .neo-btn {
+  background-color: #f5f5f5;
+  color: #111111;
+  box-shadow: 0 12px 24px rgb(0 0 0 / .24);
+}
+.dark .neo-btn:hover {
+  box-shadow: 0 16px 28px rgb(0 0 0 / .28);
+}
+.glass-card {
+  backdrop-filter: blur(4px);
+  background-color: rgb(255 255 255 / .85);
+  border: 1px solid rgb(229 229 229 / .6);
+}
+.dark .glass-card {
+  background-color: rgb(23 23 23 / .85);
+  border-color: rgb(64 64 64 / .6);
+}
+#navbar {
+  backdrop-filter: none;
+  background-color: transparent;
+  border-bottom: 1px solid transparent;
+}
+#navbar .text-lg {
+  color: rgb(23 23 23);
+}
+.dark #navbar .text-lg {
+  color: rgb(250 250 250);
+}
+.nav-glass {
+  backdrop-filter: blur(8px);
+  background-color: rgb(255 255 255 / .95);
+  border-bottom-color: rgb(229 229 229 / .6);
+  box-shadow: 0 2px 10px rgb(0 0 0 / .06);
+}
+.nav-glass .text-lg {
+  color: rgb(23 23 23);
+}
+.dark .nav-glass {
+  background-color: rgb(23 23 23 / .95);
+  border-bottom-color: rgb(64 64 64 / .6);
+  box-shadow: 0 2px 10px rgb(0 0 0 / .24);
+}
+.dark .nav-glass .text-lg {
+  color: rgb(250 250 250);
+}
+.card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: rgb(255 255 255 / .9);
+}
+.dark .card {
+  background-color: rgb(23 23 23 / .9);
+}
+.card-hover {
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.card-hover:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgb(0 0 0 / .12);
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .5s ease, transform .5s ease;
+}
+.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
