@@ -3,16 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Page not found — Elysian Hotel." />
-    <title>Elysian Hotel — Not Found</title>
+    <meta name="description" content="Terms of Service — Elysian Hotel." />
+    <title>Elysian Hotel — Terms of Service</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23000' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'/%3E%3C/svg%3E" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script>
-      tailwind.config = { darkMode: 'class' }
-    </script>
-    <link href="assets/css/tailwind.css" rel="stylesheet" />
+    <script>tailwind.config = { darkMode: 'class' }</script>
+    <link rel="stylesheet" href="assets/css/tailwind.css" />
   </head>
-  <body class="bg-neutral-50 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100">
+  <body class="bg-neutral-50 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100 font-[Inter]">
     <header id="navbar" class="relative z-50 transition-all">
       <div class="mx-auto max-w-7xl px-4">
         <div class="flex h-16 items-center justify-between">
@@ -27,25 +25,19 @@
             <a href="rooms.html" class="nav-link">Rooms</a>
             <a href="about.html" class="nav-link">About</a>
             <a href="contact.html" class="nav-link">Contact</a>
+            <a href="faq.html" class="nav-link">FAQ</a>
             <button id="theme-toggle" aria-label="Toggle theme" class="rounded-full p-2 transition bg-white/80 dark:bg-neutral-800 hover:bg-white dark:hover:bg-neutral-700">
               <span id="theme-icon" class="block h-5 w-5">
-                <!-- Sun icon (shown in light mode) -->
-                <svg id="sun-icon" class="w-5 h-5 text-neutral-900 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                </svg>
-                <!-- Moon icon (shown in dark mode) -->
-                <svg id="moon-icon" class="w-5 h-5 text-neutral-100 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-                </svg>
+                <svg id="sun-icon" class="w-5 h-5 text-neutral-900 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                <svg id="moon-icon" class="w-5 h-5 text-neutral-100 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
               </span>
             </button>
-            <a href="login.html" class="nav-link px-4 py-2 rounded-full text-sm font-medium">Login</a>
+            <a href="login.html" class="glass-card px-4 py-2 rounded-full text-sm font-medium">Login</a>
+            <a href="signup.html" class="glass-card px-4 py-2 rounded-full text-sm font-medium">Register</a>
             <a href="rooms.html" class="neo-btn px-4 py-2 rounded-full text-sm font-medium">Book Now</a>
           </nav>
           <button id="mobile-toggle" class="lg:hidden rounded-full p-2 bg-white/80 dark:bg-neutral-800 hover:bg-white dark:hover:bg-neutral-700">
-            <svg class="h-5 w-5 text-neutral-900 dark:text-neutral-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-            </svg>
+            <svg class="h-5 w-5 text-neutral-900 dark:text-neutral-100" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
           </button>
         </div>
       </div>
@@ -57,20 +49,16 @@
               <a href="rooms.html" class="nav-link py-2">Rooms</a>
               <a href="about.html" class="nav-link py-2">About</a>
               <a href="contact.html" class="nav-link py-2">Contact</a>
+              <a href="faq.html" class="nav-link py-2">FAQ</a>
               <div class="flex items-center justify-center gap-3">
                 <button id="theme-toggle-m" class="rounded-full p-2 transition bg-white/80 dark:bg-neutral-800 hover:bg-white dark:hover:bg-neutral-700">
                   <span id="theme-icon-m" class="block h-5 w-5">
-                    <!-- Sun icon (shown in light mode) -->
-                    <svg id="sun-icon-m" class="w-5 h-5 text-neutral-900 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                    </svg>
-                    <!-- Moon icon (shown in dark mode) -->
-                    <svg id="moon-icon-m" class="w-5 h-5 text-neutral-100 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
-                    </svg>
+                    <svg id="sun-icon-m" class="w-5 h-5 text-neutral-900 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <svg id="moon-icon-m" class="w-5 h-5 text-neutral-100 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                   </span>
                 </button>
-                <a href="login.html" class="nav-link px-4 py-2 rounded-full text-sm font-medium">Login</a>
+                <a href="login.html" class="glass-card px-4 py-2 rounded-full text-sm font-medium">Login</a>
+                <a href="signup.html" class="glass-card px-4 py-2 rounded-full text-sm font-medium">Register</a>
                 <a href="rooms.html" class="neo-btn px-4 py-2 rounded-full text-sm font-medium">Book Now</a>
               </div>
             </div>
@@ -81,10 +69,19 @@
 
     <main class="pt-12 md:pt-16">
       <section class="mx-auto max-w-7xl px-4 reveal text-center">
-        <div class="glass-card max-w-md mx-auto rounded-2xl p-8">
-          <h1 class="text-5xl font-semibold">404</h1>
-          <p class="mt-3 text-neutral-600 dark:text-neutral-300">The page you’re looking for doesn’t exist.</p>
-          <a href="index.html" class="neo-btn mt-6 inline-block rounded-full px-5 py-3">Back to Home</a>
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-semibold leading-tight">Terms of Service</h1>
+        <p class="mt-3 max-w-3xl mx-auto text-neutral-600 dark:text-neutral-300">Last updated: January 2025</p>
+      </section>
+      <section class="mx-auto max-w-7xl px-4 mt-10 reveal">
+        <div class="glass-card rounded-2xl p-6 md:p-8 max-w-3xl mx-auto">
+          <h2 class="text-xl font-semibold">Acceptance of Terms</h2>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">By booking or using our services, you agree to these terms.</p>
+          <h2 class="mt-6 text-xl font-semibold">Use of Services</h2>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Please provide accurate information and respect property rules during your stay.</p>
+          <h2 class="mt-6 text-xl font-semibold">Payment and Billing</h2>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">Prices are shown at booking. Taxes and fees may apply where required by law.</p>
+          <h2 class="mt-6 text-xl font-semibold">Limitation of Liability</h2>
+          <p class="mt-2 text-sm text-neutral-600 dark:text-neutral-300">We are not responsible for indirect or incidental damages beyond the cost of the stay.</p>
         </div>
       </section>
     </main>
@@ -129,6 +126,7 @@
         <p class="mt-8 text-center text-sm text-neutral-500 dark:text-neutral-400">© 2025 Elysian Hotel</p>
       </div>
     </footer>
+
     <script src="assets/js/main.js"></script>
   </body>
 </html>

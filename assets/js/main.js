@@ -87,6 +87,17 @@
     items.forEach(i => io.observe(i))
   }
 
+  function initActiveNav() {
+    const current = (window.location.pathname.split('/').pop() || 'index.html').toLowerCase()
+    const links = document.querySelectorAll('header .nav-link, #mobile-menu .nav-link')
+    links.forEach(a => {
+      const href = (a.getAttribute('href') || '').toLowerCase()
+      if (href && href === current) {
+        a.classList.add('nav-link-active')
+      }
+    })
+  }
+
   function initForms() {
     if (bookingForm) {
       bookingForm.addEventListener('submit', e => {
@@ -132,7 +143,7 @@
   initReveal()
   initForms()
   initImageErrorHandling()
+  initActiveNav()
   themeToggle && themeToggle.addEventListener('click', toggleTheme)
   themeToggleM && themeToggleM.addEventListener('click', toggleTheme)
 })()
-

@@ -30,6 +30,7 @@
             <a href="rooms.html" class="nav-link">Rooms</a>
             <a href="about.html" class="nav-link">About</a>
             <a href="contact.html" class="nav-link">Contact</a>
+            <a href="faq.html" class="nav-link">FAQ</a>
             <button id="theme-toggle" aria-label="Toggle theme" class="rounded-full p-2 transition bg-white/80 dark:bg-neutral-800 hover:bg-white dark:hover:bg-neutral-700">
               <span id="theme-icon" class="block h-5 w-5">
                 <!-- Sun icon (shown in light mode) -->
@@ -42,7 +43,8 @@
                 </svg>
               </span>
             </button>
-            <a href="login.html" class="nav-link px-4 py-2 rounded-full text-sm font-medium">Login</a>
+            <a href="login.html" class="glass-card px-4 py-2 rounded-full text-sm font-medium">Login</a>
+            <a href="signup.html" class="glass-card px-4 py-2 rounded-full text-sm font-medium">Register</a>
             <a href="rooms.html" class="neo-btn px-4 py-2 rounded-full text-sm font-medium">Book Now</a>
           </nav>
           <button id="mobile-toggle" class="lg:hidden rounded-full p-2 bg-white/80 dark:bg-neutral-800 hover:bg-white dark:hover:bg-neutral-700">
@@ -60,6 +62,7 @@
               <a href="rooms.html" class="nav-link py-2">Rooms</a>
               <a href="about.html" class="nav-link py-2">About</a>
               <a href="contact.html" class="nav-link py-2">Contact</a>
+              <a href="faq.html" class="nav-link py-2">FAQ</a>
               <div class="flex items-center justify-center gap-3">
                 <button id="theme-toggle-m" class="rounded-full p-2 transition bg-white/80 dark:bg-neutral-800 hover:bg-white dark:hover:bg-neutral-700">
                   <span id="theme-icon-m" class="block h-5 w-5">
@@ -73,7 +76,8 @@
                     </svg>
                   </span>
                 </button>
-                <a href="login.html" class="nav-link px-4 py-2 rounded-full text-sm font-medium">Login</a>
+                <a href="login.html" class="glass-card px-4 py-2 rounded-full text-sm font-medium">Login</a>
+                <a href="signup.html" class="glass-card px-4 py-2 rounded-full text-sm font-medium">Register</a>
                 <a href="rooms.html" class="neo-btn px-4 py-2 rounded-full text-sm font-medium">Book Now</a>
               </div>
             </div>
@@ -110,8 +114,8 @@
       <!-- Mission & Vision -->
       <section class="mx-auto max-w-7xl px-4 mt-20 reveal">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          <div class="glass-card rounded-2xl p-8 md:p-10">
-            <div class="h-16 w-16 rounded-2xl bg-neutral-900 dark:bg-neutral-100 mb-6 flex items-center justify-center">
+          <div class="glass-card rounded-2xl p-8 md:p-10 text-center">
+            <div class="h-16 w-16 rounded-2xl bg-neutral-900 dark:bg-neutral-100 mx-auto mb-6 flex items-center justify-center">
               <span class="text-2xl">🎯</span>
             </div>
             <h2 class="text-2xl md:text-3xl font-semibold mb-4">Our Mission</h2>
@@ -119,8 +123,8 @@
               To provide a sanctuary of calm luxury where every detail is thoughtfully considered. We create spaces that restore, inspire, and allow you to move at your own pace.
             </p>
           </div>
-          <div class="glass-card rounded-2xl p-8 md:p-10">
-            <div class="h-16 w-16 rounded-2xl bg-neutral-900 dark:bg-neutral-100 mb-6 flex items-center justify-center">
+          <div class="glass-card rounded-2xl p-8 md:p-10 text-center">
+            <div class="h-16 w-16 rounded-2xl bg-neutral-900 dark:bg-neutral-100 mx-auto mb-6 flex items-center justify-center">
               <span class="text-2xl">✨</span>
             </div>
             <h2 class="text-2xl md:text-3xl font-semibold mb-4">Our Vision</h2>
@@ -190,7 +194,11 @@
         <div class="relative">
           <div class="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-neutral-200 dark:bg-neutral-800 hidden md:block"></div>
           <div class="space-y-12">
-            <div class="relative flex flex-col md:flex-row items-start md:items-center gap-6">
+            <div class="relative flex flex-col md:flex-row items-center md:items-center gap-6">
+              <div class="flex items-center gap-2 md:hidden mb-2">
+                <span class="w-3 h-3 rounded-full bg-neutral-900 dark:bg-neutral-100"></span>
+                <span class="text-sm font-medium text-neutral-500 dark:text-neutral-400">2018</span>
+              </div>
               <div class="md:w-1/2 md:pr-12 md:text-right">
                 <div class="glass-card rounded-2xl p-6">
                   <div class="text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-2">2018</div>
@@ -200,14 +208,18 @@
                   </p>
                 </div>
               </div>
-              <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-neutral-900 dark:bg-neutral-100 border-4 border-neutral-50 dark:border-neutral-900 z-10"></div>
-              <div class="md:w-1/2 md:pl-12">
-                <div class="rounded-2xl overflow-hidden h-48 md:h-64">
+              <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-neutral-900 dark:bg-neutral-100 border-4 border-neutral-50 dark:border-neutral-900 z-10 hidden md:block"></div>
+              <div class="md:w-1/2 md:pl-12 flex items-center justify-center w-full md:block">
+                <div class="rounded-2xl overflow-hidden h-48 md:h-64 max-w-md md:max-w-none mx-auto md:mx-0">
                   <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop" alt="Hotel Construction" class="w-full h-full object-cover" loading="lazy" />
                 </div>
               </div>
             </div>
-            <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center gap-6">
+            <div class="relative flex flex-col md:flex-row-reverse items-center md:items-center gap-6">
+              <div class="flex items-center gap-2 md:hidden mb-2">
+                <span class="w-3 h-3 rounded-full bg-neutral-900 dark:bg-neutral-100"></span>
+                <span class="text-sm font-medium text-neutral-500 dark:text-neutral-400">2020</span>
+              </div>
               <div class="md:w-1/2 md:pl-12 md:text-left">
                 <div class="glass-card rounded-2xl p-6">
                   <div class="text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-2">2020</div>
@@ -217,14 +229,18 @@
                   </p>
                 </div>
               </div>
-              <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-neutral-900 dark:bg-neutral-100 border-4 border-neutral-50 dark:border-neutral-900 z-10"></div>
-              <div class="md:w-1/2 md:pr-12">
-                <div class="rounded-2xl overflow-hidden h-48 md:h-64">
+              <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-neutral-900 dark:bg-neutral-100 border-4 border-neutral-50 dark:border-neutral-900 z-10 hidden md:block"></div>
+              <div class="md:w-1/2 md:pr-12 flex items-center justify-center w-full md:block">
+                <div class="rounded-2xl overflow-hidden h-48 md:h-64 max-w-md md:max-w-none mx-auto md:mx-0">
                   <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=800&h=600&fit=crop" alt="Hotel Opening" class="w-full h-full object-cover" loading="lazy" />
                 </div>
               </div>
             </div>
-            <div class="relative flex flex-col md:flex-row items-start md:items-center gap-6">
+            <div class="relative flex flex-col md:flex-row items-center md:items-center gap-6">
+              <div class="flex items-center gap-2 md:hidden mb-2">
+                <span class="w-3 h-3 rounded-full bg-neutral-900 dark:bg-neutral-100"></span>
+                <span class="text-sm font-medium text-neutral-500 dark:text-neutral-400">2023</span>
+              </div>
               <div class="md:w-1/2 md:pr-12 md:text-right">
                 <div class="glass-card rounded-2xl p-6">
                   <div class="text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-2">2023</div>
@@ -234,14 +250,18 @@
                   </p>
                 </div>
               </div>
-              <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-neutral-900 dark:bg-neutral-100 border-4 border-neutral-50 dark:border-neutral-900 z-10"></div>
-              <div class="md:w-1/2 md:pl-12">
-                <div class="rounded-2xl overflow-hidden h-48 md:h-64">
+              <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-neutral-900 dark:bg-neutral-100 border-4 border-neutral-50 dark:border-neutral-900 z-10 hidden md:block"></div>
+              <div class="md:w-1/2 md:pl-12 flex items-center justify-center w-full md:block">
+                <div class="rounded-2xl overflow-hidden h-48 md:h-64 max-w-md md:max-w-none mx-auto md:mx-0">
                   <img src="https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?w=800&h=600&fit=crop" alt="Sustainable Hotel" class="w-full h-full object-cover" loading="lazy" />
                 </div>
               </div>
             </div>
-            <div class="relative flex flex-col md:flex-row-reverse items-start md:items-center gap-6">
+            <div class="relative flex flex-col md:flex-row-reverse items-center md:items-center gap-6">
+              <div class="flex items-center gap-2 md:hidden mb-2">
+                <span class="w-3 h-3 rounded-full bg-neutral-900 dark:bg-neutral-100"></span>
+                <span class="text-sm font-medium text-neutral-500 dark:text-neutral-400">Today</span>
+              </div>
               <div class="md:w-1/2 md:pl-12 md:text-left">
                 <div class="glass-card rounded-2xl p-6">
                   <div class="text-sm font-medium text-neutral-500 dark:text-neutral-400 mb-2">Today</div>
@@ -251,9 +271,9 @@
                   </p>
                 </div>
               </div>
-              <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-neutral-900 dark:bg-neutral-100 border-4 border-neutral-50 dark:border-neutral-900 z-10"></div>
-              <div class="md:w-1/2 md:pr-12">
-                <div class="rounded-2xl overflow-hidden h-48 md:h-64">
+              <div class="absolute left-4 md:left-1/2 transform -translate-x-1/2 w-4 h-4 rounded-full bg-neutral-900 dark:bg-neutral-100 border-4 border-neutral-50 dark:border-neutral-900 z-10 hidden md:block"></div>
+              <div class="md:w-1/2 md:pr-12 flex items-center justify-center w-full md:block">
+                <div class="rounded-2xl overflow-hidden h-48 md:h-64 max-w-md md:max-w-none mx-auto md:mx-0">
                   <img src="https://images.unsplash.com/photo-1559599078-9d29f0c033d5?w=800&h=600&fit=crop" alt="Elysian Hotel Today" class="w-full h-full object-cover" loading="lazy" />
                 </div>
               </div>
@@ -265,8 +285,8 @@
       <!-- What Sets Us Apart -->
       <section class="mx-auto max-w-7xl px-4 mt-20 reveal">
         <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <div class="lg:col-span-2">
-            <div class="rounded-2xl overflow-hidden h-96">
+          <div class="lg:col-span-2 flex items-center justify-center w-full md:block">
+            <div class="rounded-2xl overflow-hidden h-96 max-w-md md:max-w-none mx-auto md:mx-0">
               <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1200&h=800&fit=crop" alt="Hotel Interior" class="w-full h-full object-cover" loading="lazy" />
             </div>
           </div>
@@ -359,6 +379,16 @@
               <span class="text-lg font-semibold">Elysian Hotel</span>
             </div>
             <p class="mt-3 text-sm text-neutral-600 dark:text-neutral-300">Quiet stays, refined details, and seamless booking.</p>
+            <div class="mt-4 flex gap-3 justify-center sm:justify-start">
+              <a href="https://accounts.google.com/" target="_blank" rel="noopener noreferrer" class="glass-card px-3 py-2 rounded-full text-sm inline-flex items-center gap-2 card-hover">
+                <span class="h-5 w-5 rounded-full bg-neutral-900 dark:bg-neutral-100 flex items-center justify-center text-white dark:text-neutral-900 text-xs font-semibold">G</span>
+                <span>Google</span>
+              </a>
+              <a href="https://www.facebook.com/login/" target="_blank" rel="noopener noreferrer" class="glass-card px-3 py-2 rounded-full text-sm inline-flex items-center gap-2 card-hover">
+                <span class="h-5 w-5 rounded-full bg-neutral-900 dark:bg-neutral-100 flex items-center justify-center text-white dark:text-neutral-900 text-xs font-semibold">f</span>
+                <span>Facebook</span>
+              </a>
+            </div>
           </div>
           <div class="text-center sm:text-left">
             <h5 class="font-semibold">Navigation</h5>
@@ -372,9 +402,9 @@
           <div class="text-center sm:text-left">
             <h5 class="font-semibold">Policies</h5>
             <ul class="mt-3 space-y-2 text-sm">
-              <li><a href="#" class="nav-link">Privacy Policy</a></li>
-              <li><a href="#" class="nav-link">Terms of Service</a></li>
-              <li><a href="#" class="nav-link">Cancellation Policy</a></li>
+              <li><a href="privacy.html" class="nav-link">Privacy Policy</a></li>
+              <li><a href="terms.html" class="nav-link">Terms of Service</a></li>
+              <li><a href="cancellation.html" class="nav-link">Cancellation Policy</a></li>
             </ul>
           </div>
           <div class="text-center sm:text-left">
