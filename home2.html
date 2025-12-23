@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Elysian Hotel — Find Your Perfect Stay, Anywhere. Premium hotel booking with best prices and verified reviews." />
+    <title>Elysian Hotel — Find Your Perfect Stay</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23000' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'/%3E%3C/svg%3E" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: 'class' }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/tailwind.css" />
+  </head>
+  <body class="bg-neutral-50 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100 font-[Inter]">
+    <header id="navbar" class="relative z-50 transition-all">
+      <div class="mx-auto max-w-7xl px-4">
+        <div class="flex h-16 items-center justify-between">
+          <a href="index.html" class="flex items-center gap-2">
+            <svg class="h-8 w-8 text-neutral-900 dark:text-neutral-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            <span class="text-lg font-semibold">Elysian Hotel</span>
+          </a>
+          <nav class="hidden lg:flex items-center gap-8">
+            <div class="relative group" id="home-dropdown">
+              <button class="nav-link flex items-center gap-1" aria-expanded="false" aria-haspopup="true" id="home-dropdown-btn">
+                Home
+                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="absolute top-full left-0 pt-2 opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition-all duration-200 z-[100]">
+                <div class="glass-card rounded-2xl p-2 min-w-[200px] shadow-lg border border-neutral-200 dark:border-neutral-700">
+                  <a href="index.html" class="block px-4 py-2 rounded-xl nav-link hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Home</a>
+                  <a href="home2.html" class="block px-4 py-2 rounded-xl nav-link hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Home2</a>
+                </div>
+              </div>
+            </div>
+            <a href="rooms.html" class="nav-link">Rooms</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="faq.html" class="nav-link">FAQ</a>
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+            <button id="theme-toggle" aria-label="Toggle theme" class="rounded-full p-2 transition bg-white/80 dark:bg-neutral-800 hover:bg-white dark:hover:bg-neutral-700">
+              <span id="theme-icon" class="block h-5 w-5">
+                <!-- Sun icon (shown in light mode) -->
+                <svg id="sun-icon" class="w-5 h-5 text-neutral-900 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+                <!-- Moon icon (shown in dark mode) -->
+                <svg id="moon-icon" class="w-5 h-5 text-neutral-100 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                </svg>
+              </span>
+            </button>
+            <a href="login.html" class="glass-card px-4 py-2 rounded-full text-sm font-medium">Login</a>
+            <a href="signup.html" class="glass-card px-4 py-2 rounded-full text-sm font-medium">Register</a>
+            <a href="rooms.html" class="neo-btn px-4 py-2 rounded-full text-sm font-medium">Book Now</a>
+          </nav>
+          <button id="mobile-toggle" class="lg:hidden rounded-full p-2 bg-white/80 dark:bg-neutral-800 hover:bg-white dark:hover:bg-neutral-700">
+            <svg class="h-5 w-5 text-neutral-900 dark:text-neutral-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="lg:hidden hidden">
+        <div class="mx-auto max-w-7xl px-4 pb-4">
+          <div class="glass-card rounded-2xl p-4">
+            <div class="grid gap-3 text-center">
+              <div class="relative">
+                <button class="nav-link py-2 w-full flex items-center justify-center gap-1" id="mobile-home-dropdown-btn">
+                  Home
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div id="mobile-home-dropdown" class="hidden mt-2 space-y-2">
+                  <a href="index.html" class="block nav-link py-2">Home</a>
+                  <a href="home2.html" class="block nav-link py-2">Home2</a>
+                </div>
+              </div>
+              <a href="rooms.html" class="nav-link py-2">Rooms</a>
+              <a href="about.html" class="nav-link py-2">About</a>
+              <a href="contact.html" class="nav-link py-2">Contact</a>
+              <a href="faq.html" class="nav-link py-2">FAQ</a>
+              <a href="dashboard.html" class="nav-link py-2">Dashboard</a>
+              <div class="flex items-center justify-center gap-3">
+                <button id="theme-toggle-m" class="rounded-full p-2 transition bg-white/80 dark:bg-neutral-800 hover:bg-white dark:hover:bg-neutral-700">
+                  <span id="theme-icon-m" class="block h-5 w-5">
+                    <!-- Sun icon (shown in light mode) -->
+                    <svg id="sun-icon-m" class="w-5 h-5 text-neutral-900 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                    <!-- Moon icon (shown in dark mode) -->
+                    <svg id="moon-icon-m" class="w-5 h-5 text-neutral-100 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                  </span>
+                </button>
+                <a href="login.html" class="glass-card px-4 py-2 rounded-full text-sm font-medium card-hover">Login</a>
+                <a href="signup.html" class="glass-card px-4 py-2 rounded-full text-sm font-medium card-hover">Register</a>
+                <a href="rooms.html" class="neo-btn px-4 py-2 rounded-full text-sm font-medium">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-0">
+      <!-- Hero Section with Search-First Design -->
+      <section class="relative min-h-[600px] md:min-h-[700px] flex items-center justify-center overflow-hidden reveal">
+        <div class="absolute inset-0 z-0">
+          <img src="https://images.unsplash.com/photo-1564501049412-61c2a3083791?w=1920&h=1080&fit=crop" alt="Luxury Hotel" class="w-full h-full object-cover" loading="eager" />
+          <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-black/40 to-black/60"></div>
+        </div>
+        <div class="relative z-10 mx-auto max-w-7xl px-4 w-full py-16">
+          <div class="text-center mb-8">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-semibold text-white mb-4 leading-tight">Find Your Perfect Stay, Anywhere</h1>
+            <p class="text-lg sm:text-xl text-white/90 max-w-2xl mx-auto">Discover luxury hotels with the best prices, verified reviews, and secure bookings</p>
+          </div>
+          <div class="glass-card w-full max-w-4xl mx-auto rounded-2xl p-6 md:p-8">
+            <form id="booking-form" class="grid grid-cols-1 md:grid-cols-5 gap-4">
+              <div class="flex flex-col">
+                <label class="text-sm font-medium mb-2">Location</label>
+                <input type="text" placeholder="Where to?" class="input neo-hover" required />
+              </div>
+              <div class="flex flex-col">
+                <label class="text-sm font-medium mb-2">Check-in</label>
+                <input type="date" class="input neo-hover" required />
+              </div>
+              <div class="flex flex-col">
+                <label class="text-sm font-medium mb-2">Check-out</label>
+                <input type="date" class="input neo-hover" required />
+              </div>
+              <div class="flex flex-col">
+                <label class="text-sm font-medium mb-2">Guests & Rooms</label>
+                <input type="text" placeholder="2 Guests, 1 Room" class="input neo-hover" />
+              </div>
+              <div class="flex items-end">
+                <button type="submit" class="neo-btn w-full rounded-xl px-6 py-3 font-medium text-base">Search Hotels</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <!-- Featured Destinations -->
+      <section class="mx-auto max-w-7xl px-4 mt-16 md:mt-24 reveal">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-semibold mb-4">Featured Destinations</h2>
+          <p class="text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">Explore popular cities and find the perfect hotel for your next adventure</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <article class="card glass-even rounded-2xl overflow-hidden group relative card-hover">
+            <div class="relative h-64">
+              <img src="https://images.unsplash.com/photo-1514565131-fce0801e5785?w=800&h=600&fit=crop" alt="Paris" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4 text-white">
+                <h3 class="text-xl font-semibold mb-1">Paris</h3>
+                <p class="text-sm opacity-90">Starting from $89/night</p>
+              </div>
+            </div>
+            <div class="p-4">
+              <a href="rooms.html" class="neo-btn w-full text-center block px-4 py-2 rounded-full text-sm">View Hotels</a>
+            </div>
+          </article>
+          <article class="card glass-even rounded-2xl overflow-hidden group relative card-hover">
+            <div class="relative h-64">
+              <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=800&h=600&fit=crop" alt="New York" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4 text-white">
+                <h3 class="text-xl font-semibold mb-1">New York</h3>
+                <p class="text-sm opacity-90">Starting from $129/night</p>
+              </div>
+            </div>
+            <div class="p-4">
+              <a href="rooms.html" class="neo-btn w-full text-center block px-4 py-2 rounded-full text-sm">View Hotels</a>
+            </div>
+          </article>
+          <article class="card glass-even rounded-2xl overflow-hidden group relative card-hover">
+            <div class="relative h-64">
+              <img src="https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?w=800&h=600&fit=crop" alt="Tokyo" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4 text-white">
+                <h3 class="text-xl font-semibold mb-1">Tokyo</h3>
+                <p class="text-sm opacity-90">Starting from $99/night</p>
+              </div>
+            </div>
+            <div class="p-4">
+              <a href="rooms.html" class="neo-btn w-full text-center block px-4 py-2 rounded-full text-sm">View Hotels</a>
+            </div>
+          </article>
+          <article class="card glass-even rounded-2xl overflow-hidden group relative card-hover">
+            <div class="relative h-64">
+              <img src="https://images.unsplash.com/photo-1539037116277-4db20889f2d4?w=800&h=600&fit=crop" alt="London" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+              <div class="absolute bottom-4 left-4 right-4 text-white">
+                <h3 class="text-xl font-semibold mb-1">London</h3>
+                <p class="text-sm opacity-90">Starting from $109/night</p>
+              </div>
+            </div>
+            <div class="p-4">
+              <a href="rooms.html" class="neo-btn w-full text-center block px-4 py-2 rounded-full text-sm">View Hotels</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Top Hotel Picks -->
+      <section class="mx-auto max-w-7xl px-4 mt-16 md:mt-24 reveal">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-semibold mb-4">Top Hotel Picks</h2>
+          <p class="text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">Handpicked luxury hotels with exceptional ratings and amenities</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <article class="card glass-even rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=600&fit=crop" alt="Grand Plaza Hotel" class="h-48 w-full object-cover" loading="lazy" />
+            <div class="p-6 flex flex-col gap-3">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl font-semibold">Grand Plaza Hotel</h3>
+                <div class="flex items-center gap-1">
+                  <span class="text-yellow-400">★</span>
+                  <span class="text-sm font-medium">4.8</span>
+                </div>
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-300">Luxury suite with panoramic city views, spa access, and fine dining</p>
+              <div class="flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-300">
+                <span>🏊</span>
+                <span>🍽️</span>
+                <span>💆</span>
+                <span>🚗</span>
+              </div>
+              <div class="mt-auto flex items-center justify-between pt-3 border-t border-neutral-200 dark:border-neutral-800">
+                <div>
+                  <span class="text-2xl font-semibold">$189</span>
+                  <span class="text-sm text-neutral-600 dark:text-neutral-300">/night</span>
+                </div>
+                <a href="rooms.html" class="neo-btn px-4 py-2 rounded-full text-sm">Book Now</a>
+              </div>
+            </div>
+          </article>
+          <article class="card glass-even rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&h=600&fit=crop" alt="Oceanview Resort" class="h-48 w-full object-cover" loading="lazy" />
+            <div class="p-6 flex flex-col gap-3">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl font-semibold">Oceanview Resort</h3>
+                <div class="flex items-center gap-1">
+                  <span class="text-yellow-400">★</span>
+                  <span class="text-sm font-medium">4.9</span>
+                </div>
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-300">Beachfront property with infinity pool, private beach, and world-class spa</p>
+              <div class="flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-300">
+                <span>🏊</span>
+                <span>🍽️</span>
+                <span>💆</span>
+                <span>🏋️</span>
+              </div>
+              <div class="mt-auto flex items-center justify-between pt-3 border-t border-neutral-200 dark:border-neutral-800">
+                <div>
+                  <span class="text-2xl font-semibold">$249</span>
+                  <span class="text-sm text-neutral-600 dark:text-neutral-300">/night</span>
+                </div>
+                <a href="rooms.html" class="neo-btn px-4 py-2 rounded-full text-sm">Book Now</a>
+              </div>
+            </div>
+          </article>
+          <article class="card glass-even rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop" alt="Metropolitan Hotel" class="h-48 w-full object-cover" loading="lazy" />
+            <div class="p-6 flex flex-col gap-3">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl font-semibold">Metropolitan Hotel</h3>
+                <div class="flex items-center gap-1">
+                  <span class="text-yellow-400">★</span>
+                  <span class="text-sm font-medium">4.7</span>
+                </div>
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-300">Modern design hotel in the heart of downtown with rooftop bar</p>
+              <div class="flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-300">
+                <span>🍽️</span>
+                <span>🏋️</span>
+                <span>📶</span>
+                <span>🚗</span>
+              </div>
+              <div class="mt-auto flex items-center justify-between pt-3 border-t border-neutral-200 dark:border-neutral-800">
+                <div>
+                  <span class="text-2xl font-semibold">$159</span>
+                  <span class="text-sm text-neutral-600 dark:text-neutral-300">/night</span>
+                </div>
+                <a href="rooms.html" class="neo-btn px-4 py-2 rounded-full text-sm">Book Now</a>
+              </div>
+            </div>
+          </article>
+          <article class="card glass-even rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800&h=600&fit=crop" alt="Serenity Spa Hotel" class="h-48 w-full object-cover" loading="lazy" />
+            <div class="p-6 flex flex-col gap-3">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl font-semibold">Serenity Spa Hotel</h3>
+                <div class="flex items-center gap-1">
+                  <span class="text-yellow-400">★</span>
+                  <span class="text-sm font-medium">4.8</span>
+                </div>
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-300">Wellness-focused retreat with full-service spa and organic dining</p>
+              <div class="flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-300">
+                <span>💆</span>
+                <span>🍽️</span>
+                <span>🏋️</span>
+                <span>🌿</span>
+              </div>
+              <div class="mt-auto flex items-center justify-between pt-3 border-t border-neutral-200 dark:border-neutral-800">
+                <div>
+                  <span class="text-2xl font-semibold">$199</span>
+                  <span class="text-sm text-neutral-600 dark:text-neutral-300">/night</span>
+                </div>
+                <a href="rooms.html" class="neo-btn px-4 py-2 rounded-full text-sm">Book Now</a>
+              </div>
+            </div>
+          </article>
+          <article class="card glass-even rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?w=800&h=600&fit=crop" alt="Garden View Inn" class="h-48 w-full object-cover" loading="lazy" />
+            <div class="p-6 flex flex-col gap-3">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl font-semibold">Garden View Inn</h3>
+                <div class="flex items-center gap-1">
+                  <span class="text-yellow-400">★</span>
+                  <span class="text-sm font-medium">4.6</span>
+                </div>
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-300">Charming boutique hotel with beautiful gardens and courtyard dining</p>
+              <div class="flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-300">
+                <span>🍽️</span>
+                <span>🌿</span>
+                <span>📶</span>
+                <span>🚗</span>
+              </div>
+              <div class="mt-auto flex items-center justify-between pt-3 border-t border-neutral-200 dark:border-neutral-800">
+                <div>
+                  <span class="text-2xl font-semibold">$139</span>
+                  <span class="text-sm text-neutral-600 dark:text-neutral-300">/night</span>
+                </div>
+                <a href="rooms.html" class="neo-btn px-4 py-2 rounded-full text-sm">Book Now</a>
+              </div>
+            </div>
+          </article>
+          <article class="card glass-even rounded-2xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?w=800&h=600&fit=crop" alt="Skyline Tower Hotel" class="h-48 w-full object-cover" loading="lazy" />
+            <div class="p-6 flex flex-col gap-3">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl font-semibold">Skyline Tower Hotel</h3>
+                <div class="flex items-center gap-1">
+                  <span class="text-yellow-400">★</span>
+                  <span class="text-sm font-medium">4.7</span>
+                </div>
+              </div>
+              <p class="text-sm text-neutral-600 dark:text-neutral-300">Ultra-modern high-rise with stunning city views and executive lounge</p>
+              <div class="flex items-center gap-2 text-sm text-neutral-600 dark:text-neutral-300">
+                <span>🏋️</span>
+                <span>🍽️</span>
+                <span>📶</span>
+                <span>🚗</span>
+              </div>
+              <div class="mt-auto flex items-center justify-between pt-3 border-t border-neutral-200 dark:border-neutral-800">
+                <div>
+                  <span class="text-2xl font-semibold">$179</span>
+                  <span class="text-sm text-neutral-600 dark:text-neutral-300">/night</span>
+                </div>
+                <a href="rooms.html" class="neo-btn px-4 py-2 rounded-full text-sm">Book Now</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Why Book With Us -->
+      <section class="mx-auto max-w-7xl px-4 mt-16 md:mt-24 reveal">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-semibold mb-4">Why Book With Us</h2>
+          <p class="text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">Experience the difference with our trusted booking platform</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="glass-card rounded-2xl p-8 text-center card-hover group">
+            <div class="h-20 w-20 rounded-2xl bg-neutral-900 dark:bg-neutral-100 mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <span class="text-3xl">💰</span>
+            </div>
+            <h4 class="text-xl font-semibold mb-3">Best Price Guarantee</h4>
+            <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+              Find a lower price elsewhere? We'll match it and give you an additional 10% off.
+            </p>
+          </div>
+          <div class="glass-card rounded-2xl p-8 text-center card-hover group">
+            <div class="h-20 w-20 rounded-2xl bg-neutral-900 dark:bg-neutral-100 mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <span class="text-3xl">✓</span>
+            </div>
+            <h4 class="text-xl font-semibold mb-3">Verified Reviews</h4>
+            <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+              All reviews are from verified guests who have completed their stay with us.
+            </p>
+          </div>
+          <div class="glass-card rounded-2xl p-8 text-center card-hover group">
+            <div class="h-20 w-20 rounded-2xl bg-neutral-900 dark:bg-neutral-100 mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <span class="text-3xl">🔒</span>
+            </div>
+            <h4 class="text-xl font-semibold mb-3">Secure Payments</h4>
+            <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+              Your payment information is encrypted and protected with industry-leading security.
+            </p>
+          </div>
+          <div class="glass-card rounded-2xl p-8 text-center card-hover group">
+            <div class="h-20 w-20 rounded-2xl bg-neutral-900 dark:bg-neutral-100 mx-auto mb-6 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <span class="text-3xl">📞</span>
+            </div>
+            <h4 class="text-xl font-semibold mb-3">24/7 Customer Support</h4>
+            <p class="text-sm text-neutral-600 dark:text-neutral-300 leading-relaxed">
+              Our support team is available around the clock to assist with any questions or concerns.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Deals & Offers -->
+      <section class="mx-auto max-w-7xl px-4 mt-16 md:mt-24 reveal">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-semibold mb-4">Deals & Offers</h2>
+          <p class="text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">Limited-time deals you won't want to miss</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="glass-card rounded-2xl overflow-hidden relative card-hover group">
+            <div class="relative h-48">
+              <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=800&h=600&fit=crop" alt="Early Bird Special" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-4 right-4">
+                <span class="glass-card px-3 py-1 rounded-full text-sm font-semibold text-white bg-red-500/90">Up to 30% Off</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Early Bird Special</h3>
+              <p class="text-sm text-neutral-600 dark:text-neutral-300 mb-4">Book 30 days in advance and save up to 30% on your stay</p>
+              <a href="rooms.html" class="neo-btn w-full text-center block px-4 py-2 rounded-full text-sm">Book Now</a>
+            </div>
+          </div>
+          <div class="glass-card rounded-2xl overflow-hidden relative card-hover group">
+            <div class="relative h-48">
+              <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=800&h=600&fit=crop" alt="Weekend Getaway" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-4 right-4">
+                <span class="glass-card px-3 py-1 rounded-full text-sm font-semibold text-white bg-blue-500/90">25% Off</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Weekend Getaway</h3>
+              <p class="text-sm text-neutral-600 dark:text-neutral-300 mb-4">Special rates for weekend stays - perfect for a quick escape</p>
+              <a href="rooms.html" class="neo-btn w-full text-center block px-4 py-2 rounded-full text-sm">Book Now</a>
+            </div>
+          </div>
+          <div class="glass-card rounded-2xl overflow-hidden relative card-hover group">
+            <div class="relative h-48">
+              <img src="https://images.unsplash.com/photo-1590490360182-c33d57733427?w=800&h=600&fit=crop" alt="Extended Stay" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" loading="lazy" />
+              <div class="absolute top-4 right-4">
+                <span class="glass-card px-3 py-1 rounded-full text-sm font-semibold text-white bg-green-500/90">20% Off</span>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-2">Extended Stay</h3>
+              <p class="text-sm text-neutral-600 dark:text-neutral-300 mb-4">Stay 5 nights or more and enjoy 20% off your entire booking</p>
+              <a href="rooms.html" class="neo-btn w-full text-center block px-4 py-2 rounded-full text-sm">Book Now</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Guest Reviews & Ratings -->
+      <section class="mx-auto max-w-7xl px-4 mt-16 md:mt-24 reveal">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-semibold mb-4">Guest Reviews & Ratings</h2>
+          <p class="text-neutral-600 dark:text-neutral-300 max-w-2xl mx-auto">See what our guests are saying about their experiences</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="glass-card rounded-2xl p-6">
+            <div class="flex items-center gap-1 mb-4">
+              <span class="text-yellow-400 text-lg">★★★★★</span>
+            </div>
+            <p class="text-sm text-neutral-600 dark:text-neutral-300 mb-4 italic leading-relaxed">
+              "Absolutely fantastic experience! The booking process was seamless, and the hotel exceeded all expectations. Will definitely book through this platform again."
+            </p>
+            <div class="flex items-center gap-3">
+              <div class="h-12 w-12 rounded-full bg-neutral-900 dark:bg-neutral-100 flex items-center justify-center text-white dark:text-neutral-900 font-semibold">JM</div>
+              <div>
+                <div class="font-semibold text-sm">Jennifer Martinez</div>
+                <div class="text-xs text-neutral-500 dark:text-neutral-400">Verified Guest</div>
+              </div>
+            </div>
+          </div>
+          <div class="glass-card rounded-2xl p-6">
+            <div class="flex items-center gap-1 mb-4">
+              <span class="text-yellow-400 text-lg">★★★★★</span>
+            </div>
+            <p class="text-sm text-neutral-600 dark:text-neutral-300 mb-4 italic leading-relaxed">
+              "Best price I found anywhere! The customer service was excellent when I had to make a change to my reservation. Highly recommend!"
+            </p>
+            <div class="flex items-center gap-3">
+              <div class="h-12 w-12 rounded-full bg-neutral-900 dark:bg-neutral-100 flex items-center justify-center text-white dark:text-neutral-900 font-semibold">RK</div>
+              <div>
+                <div class="font-semibold text-sm">Robert Kim</div>
+                <div class="text-xs text-neutral-500 dark:text-neutral-400">Verified Guest</div>
+              </div>
+            </div>
+          </div>
+          <div class="glass-card rounded-2xl p-6">
+            <div class="flex items-center gap-1 mb-4">
+              <span class="text-yellow-400 text-lg">★★★★★</span>
+            </div>
+            <p class="text-sm text-neutral-600 dark:text-neutral-300 mb-4 italic leading-relaxed">
+              "The verified reviews helped me choose the perfect hotel. Everything was exactly as described. Secure payment and instant confirmation made it stress-free."
+            </p>
+            <div class="flex items-center gap-3">
+              <div class="h-12 w-12 rounded-full bg-neutral-900 dark:bg-neutral-100 flex items-center justify-center text-white dark:text-neutral-900 font-semibold">AS</div>
+              <div>
+                <div class="font-semibold text-sm">Amanda Smith</div>
+                <div class="text-xs text-neutral-500 dark:text-neutral-400">Verified Guest</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- App / Loyalty Promotion -->
+      <section class="mx-auto max-w-7xl px-4 mt-16 md:mt-24 reveal">
+        <div class="glass-card rounded-3xl p-8 md:p-12 overflow-hidden relative">
+          <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+            <div class="text-center lg:text-left">
+              <h2 class="text-3xl md:text-4xl font-semibold mb-4">Join Our Rewards Program</h2>
+              <p class="text-lg text-neutral-600 dark:text-neutral-300 mb-6">
+                Earn points with every booking and unlock exclusive benefits. Download our app for instant access to special deals and easy booking on the go.
+              </p>
+              <div class="flex flex-col sm:flex-row gap-4 md:justify-center md:items-center lg:justify-start lg:items-start">
+                <a href="#" class="neo-btn px-6 py-3 rounded-full text-base font-medium text-center">
+                  Download App
+                </a>
+                <a href="signup.html" class="glass-card px-6 py-3 rounded-full text-base font-medium text-center inline-block card-hover">
+                  Join Rewards
+                </a>
+              </div>
+            </div>
+            <div class="rounded-2xl overflow-hidden">
+              <img src="https://images.unsplash.com/photo-1551884170-09fb70a3a2ed?w=800&h=600&fit=crop" alt="Mobile App" class="w-full h-full object-cover min-h-[300px]" loading="lazy" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final Booking CTA -->
+      <section class="mx-auto max-w-7xl px-4 mt-16 md:mt-24 mb-16 reveal">
+        <div class="glass-card rounded-3xl p-12 md:p-16 text-center relative overflow-hidden">
+          <div class="absolute inset-0 bg-gradient-to-br from-neutral-900/5 to-neutral-900/10 dark:from-neutral-100/5 dark:to-neutral-100/10"></div>
+          <div class="relative z-10">
+            <h2 class="text-3xl md:text-5xl font-semibold mb-4">Ready to Find Your Perfect Stay?</h2>
+            <p class="text-lg md:text-xl text-neutral-600 dark:text-neutral-300 mb-8 max-w-2xl mx-auto">
+              Start your booking journey today and discover luxury hotels with the best prices and verified reviews
+            </p>
+            <a href="rooms.html" class="neo-btn px-8 py-4 rounded-full text-lg font-medium inline-block">
+              Start Your Booking
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="mt-24 border-t border-neutral-200 dark:border-neutral-800">
+      <div class="mx-auto max-w-7xl px-4 py-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center sm:text-left">
+            <div class="flex items-center justify-center sm:justify-start gap-3">
+              <svg class="h-8 w-8 text-neutral-900 dark:text-neutral-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+              <span class="text-lg font-semibold">Elysian Hotel</span>
+            </div>
+            <p class="mt-3 text-sm text-neutral-600 dark:text-neutral-300">Quiet stays, refined details, and seamless booking.</p>
+            <div class="mt-4 flex gap-3 justify-center sm:justify-start">
+              <a href="https://accounts.google.com/" target="_blank" rel="noopener noreferrer" class="glass-card px-3 py-2 rounded-full text-sm inline-flex items-center gap-2 card-hover">
+                <span class="h-5 w-5 rounded-full bg-neutral-900 dark:bg-neutral-100 flex items-center justify-center text-white dark:text-neutral-900 text-xs font-semibold">G</span>
+                <span>Google</span>
+              </a>
+              <a href="https://www.facebook.com/login/" target="_blank" rel="noopener noreferrer" class="glass-card px-3 py-2 rounded-full text-sm inline-flex items-center gap-2 card-hover">
+                <span class="h-5 w-5 rounded-full bg-neutral-900 dark:bg-neutral-100 flex items-center justify-center text-white dark:text-neutral-900 text-xs font-semibold">f</span>
+                <span>Facebook</span>
+              </a>
+            </div>
+          </div>
+          <div class="text-center sm:text-left">
+            <h5 class="font-semibold">Navigation</h5>
+            <ul class="mt-3 space-y-2 text-sm">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="rooms.html" class="nav-link">Rooms</a></li>
+              <li><a href="about.html" class="nav-link">About</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+          </div>
+          <div class="text-center sm:text-left">
+            <h5 class="font-semibold">Policies</h5>
+            <ul class="mt-3 space-y-2 text-sm">
+              <li><a href="privacy.html" class="nav-link">Privacy Policy</a></li>
+              <li><a href="terms.html" class="nav-link">Terms of Service</a></li>
+              <li><a href="cancellation.html" class="nav-link">Cancellation Policy</a></li>
+            </ul>
+          </div>
+          <div class="text-center sm:text-left">
+            <h5 class="font-semibold">Newsletter</h5>
+            <form class="mt-3 flex gap-3 justify-center sm:justify-start">
+              <input type="email" placeholder="Your email" class="input w-full max-w-[210px]" />
+              <button class="neo-btn px-4 py-2 rounded-full text-sm">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <p class="mt-8 text-center text-sm text-neutral-500 dark:text-neutral-400">© 2025 Elysian Hotel</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+  </body>
+</html>
+

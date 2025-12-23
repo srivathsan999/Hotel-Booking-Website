@@ -73,6 +73,50 @@
     })
   }
 
+  function initHomeDropdown() {
+    // Mobile dropdown toggle
+    const mobileDropdownBtn = document.getElementById('mobile-home-dropdown-btn')
+    const mobileDropdown = document.getElementById('mobile-home-dropdown')
+    if (mobileDropdownBtn && mobileDropdown) {
+      mobileDropdownBtn.addEventListener('click', (e) => {
+        e.preventDefault()
+        mobileDropdown.classList.toggle('hidden')
+        const isExpanded = !mobileDropdown.classList.contains('hidden')
+        mobileDropdownBtn.setAttribute('aria-expanded', isExpanded)
+      })
+    }
+
+    // Desktop dropdown - handled via CSS hover, but add keyboard support
+    const homeDropdownBtn = document.getElementById('home-dropdown-btn')
+    const homeDropdown = document.getElementById('home-dropdown')
+    if (homeDropdownBtn && homeDropdown) {
+      const dropdownMenu = homeDropdown.querySelector('.glass-card')
+      
+      // Keyboard navigation
+      homeDropdownBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault()
+          const isExpanded = homeDropdownBtn.getAttribute('aria-expanded') === 'true'
+          homeDropdownBtn.setAttribute('aria-expanded', !isExpanded)
+          if (dropdownMenu) {
+            dropdownMenu.classList.toggle('opacity-0')
+            dropdownMenu.classList.toggle('invisible')
+          }
+        }
+      })
+
+      // Close on outside click for keyboard users
+      document.addEventListener('click', (e) => {
+        if (!homeDropdown.contains(e.target) && homeDropdownBtn.getAttribute('aria-expanded') === 'true') {
+          homeDropdownBtn.setAttribute('aria-expanded', 'false')
+          if (dropdownMenu) {
+            dropdownMenu.classList.add('opacity-0', 'invisible')
+          }
+        }
+      })
+    }
+  }
+
   function initReveal() {
     const items = Array.from(document.querySelectorAll('.reveal'))
     if (!items.length) return
@@ -94,6 +138,17 @@
       const href = (a.getAttribute('href') || '').toLowerCase()
       if (href && href === current) {
         a.classList.add('nav-link-active')
+        // Also mark parent dropdown button as active if it's a home page
+        if (current === 'index.html' || current === 'home2.html') {
+          const homeDropdownBtn = document.getElementById('home-dropdown-btn')
+          const mobileHomeDropdownBtn = document.getElementById('mobile-home-dropdown-btn')
+          if (homeDropdownBtn) {
+            homeDropdownBtn.classList.add('nav-link-active')
+          }
+          if (mobileHomeDropdownBtn) {
+            mobileHomeDropdownBtn.classList.add('nav-link-active')
+          }
+        }
       }
     })
   }
@@ -140,6 +195,7 @@
   updateThemeIcons() // Update icons on page load
   initNavbar()
   initMobileMenu()
+  initHomeDropdown()
   initReveal()
   initForms()
   initImageErrorHandling()

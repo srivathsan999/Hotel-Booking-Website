@@ -130,3 +130,8 @@ html, body {
   opacity: 1;
   transform: translateY(0);
 }
+#home-dropdown:hover > div {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+}

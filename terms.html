@@ -21,11 +21,25 @@
             <span class="text-lg font-semibold">Elysian Hotel</span>
           </a>
           <nav class="hidden lg:flex items-center gap-8">
-            <a href="index.html" class="nav-link">Home</a>
+            <div class="relative group" id="home-dropdown">
+              <button class="nav-link flex items-center gap-1" aria-expanded="false" aria-haspopup="true" id="home-dropdown-btn">
+                Home
+                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="absolute top-full left-0 pt-2 opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition-all duration-200 z-[100]">
+                <div class="glass-card rounded-2xl p-2 min-w-[200px] shadow-lg border border-neutral-200 dark:border-neutral-700">
+                  <a href="index.html" class="block px-4 py-2 rounded-xl nav-link hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Home</a>
+                  <a href="home2.html" class="block px-4 py-2 rounded-xl nav-link hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Home2</a>
+                </div>
+              </div>
+            </div>
             <a href="rooms.html" class="nav-link">Rooms</a>
             <a href="about.html" class="nav-link">About</a>
             <a href="contact.html" class="nav-link">Contact</a>
             <a href="faq.html" class="nav-link">FAQ</a>
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
             <button id="theme-toggle" aria-label="Toggle theme" class="rounded-full p-2 transition bg-white/80 dark:bg-neutral-800 hover:bg-white dark:hover:bg-neutral-700">
               <span id="theme-icon" class="block h-5 w-5">
                 <svg id="sun-icon" class="w-5 h-5 text-neutral-900 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
@@ -33,7 +47,7 @@
               </span>
             </button>
             <a href="login.html" class="glass-card px-4 py-2 rounded-full text-sm font-medium">Login</a>
-            <a href="signup.html" class="glass-card px-4 py-2 rounded-full text-sm font-medium">Register</a>
+            <a href="signup.html" class="glass-card px-4 py-2 rounded-full text-sm font-medium card-hover">Register</a>
             <a href="rooms.html" class="neo-btn px-4 py-2 rounded-full text-sm font-medium">Book Now</a>
           </nav>
           <button id="mobile-toggle" class="lg:hidden rounded-full p-2 bg-white/80 dark:bg-neutral-800 hover:bg-white dark:hover:bg-neutral-700">
@@ -45,11 +59,23 @@
         <div class="mx-auto max-w-7xl px-4 pb-4">
           <div class="glass-card rounded-2xl p-4">
             <div class="grid gap-3 text-center">
-              <a href="index.html" class="nav-link py-2">Home</a>
+              <div class="relative">
+                <button class="nav-link py-2 w-full flex items-center justify-center gap-1" id="mobile-home-dropdown-btn">
+                  Home
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div id="mobile-home-dropdown" class="hidden mt-2 space-y-2">
+                  <a href="index.html" class="block nav-link py-2">Home</a>
+                  <a href="home2.html" class="block nav-link py-2">Home2</a>
+                </div>
+              </div>
               <a href="rooms.html" class="nav-link py-2">Rooms</a>
               <a href="about.html" class="nav-link py-2">About</a>
               <a href="contact.html" class="nav-link py-2">Contact</a>
               <a href="faq.html" class="nav-link py-2">FAQ</a>
+              <a href="dashboard.html" class="nav-link py-2">Dashboard</a>
               <div class="flex items-center justify-center gap-3">
                 <button id="theme-toggle-m" class="rounded-full p-2 transition bg-white/80 dark:bg-neutral-800 hover:bg-white dark:hover:bg-neutral-700">
                   <span id="theme-icon-m" class="block h-5 w-5">
@@ -57,8 +83,8 @@
                     <svg id="moon-icon-m" class="w-5 h-5 text-neutral-100 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
                   </span>
                 </button>
-                <a href="login.html" class="glass-card px-4 py-2 rounded-full text-sm font-medium">Login</a>
-                <a href="signup.html" class="glass-card px-4 py-2 rounded-full text-sm font-medium">Register</a>
+                <a href="login.html" class="glass-card px-4 py-2 rounded-full text-sm font-medium card-hover">Login</a>
+                <a href="signup.html" class="glass-card px-4 py-2 rounded-full text-sm font-medium card-hover">Register</a>
                 <a href="rooms.html" class="neo-btn px-4 py-2 rounded-full text-sm font-medium">Book Now</a>
               </div>
             </div>
