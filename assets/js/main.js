@@ -117,6 +117,50 @@
     }
   }
 
+  function initDashboardDropdown() {
+    // Mobile dropdown toggle
+    const mobileDropdownBtn = document.getElementById('mobile-dashboard-dropdown-btn')
+    const mobileDropdown = document.getElementById('mobile-dashboard-dropdown')
+    if (mobileDropdownBtn && mobileDropdown) {
+      mobileDropdownBtn.addEventListener('click', (e) => {
+        e.preventDefault()
+        mobileDropdown.classList.toggle('hidden')
+        const isExpanded = !mobileDropdown.classList.contains('hidden')
+        mobileDropdownBtn.setAttribute('aria-expanded', isExpanded)
+      })
+    }
+
+    // Desktop dropdown - handled via CSS hover, but add keyboard support
+    const dashboardDropdownBtn = document.getElementById('dashboard-dropdown-btn')
+    const dashboardDropdown = document.getElementById('dashboard-dropdown')
+    if (dashboardDropdownBtn && dashboardDropdown) {
+      const dropdownMenu = dashboardDropdown.querySelector('.glass-card')
+      
+      // Keyboard navigation
+      dashboardDropdownBtn.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault()
+          const isExpanded = dashboardDropdownBtn.getAttribute('aria-expanded') === 'true'
+          dashboardDropdownBtn.setAttribute('aria-expanded', !isExpanded)
+          if (dropdownMenu) {
+            dropdownMenu.classList.toggle('opacity-0')
+            dropdownMenu.classList.toggle('invisible')
+          }
+        }
+      })
+
+      // Close on outside click for keyboard users
+      document.addEventListener('click', (e) => {
+        if (!dashboardDropdown.contains(e.target) && dashboardDropdownBtn.getAttribute('aria-expanded') === 'true') {
+          dashboardDropdownBtn.setAttribute('aria-expanded', 'false')
+          if (dropdownMenu) {
+            dropdownMenu.classList.add('opacity-0', 'invisible')
+          }
+        }
+      })
+    }
+  }
+
   function initReveal() {
     const items = Array.from(document.querySelectorAll('.reveal'))
     if (!items.length) return
@@ -147,6 +191,17 @@
           }
           if (mobileHomeDropdownBtn) {
             mobileHomeDropdownBtn.classList.add('nav-link-active')
+          }
+        }
+        // Also mark parent dropdown button as active if it's a dashboard page
+        if (current === 'user-dashboard.html' || current === 'admin-dashboard.html' || current === 'dashboard.html') {
+          const dashboardDropdownBtn = document.getElementById('dashboard-dropdown-btn')
+          const mobileDashboardDropdownBtn = document.getElementById('mobile-dashboard-dropdown-btn')
+          if (dashboardDropdownBtn) {
+            dashboardDropdownBtn.classList.add('nav-link-active')
+          }
+          if (mobileDashboardDropdownBtn) {
+            mobileDashboardDropdownBtn.classList.add('nav-link-active')
           }
         }
       }
@@ -196,6 +251,7 @@
   initNavbar()
   initMobileMenu()
   initHomeDropdown()
+  initDashboardDropdown()
   initReveal()
   initForms()
   initImageErrorHandling()

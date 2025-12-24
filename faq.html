@@ -44,7 +44,20 @@
             <a href="about.html" class="nav-link">About</a>
             <a href="contact.html" class="nav-link">Contact</a>
             <a href="faq.html" class="nav-link">FAQ</a>
-            <a href="dashboard.html" class="nav-link">Dashboard</a>
+            <div class="relative group" id="dashboard-dropdown">
+              <button class="nav-link flex items-center gap-1" aria-expanded="false" aria-haspopup="true" id="dashboard-dropdown-btn">
+                Dashboard
+                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="absolute top-full left-0 pt-2 opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition-all duration-200 z-[100]">
+                <div class="glass-card rounded-2xl p-2 min-w-[200px] shadow-lg border border-neutral-200 dark:border-neutral-700">
+                  <a href="user-dashboard.html" class="block px-4 py-2 rounded-xl nav-link hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">User Dashboard</a>
+                  <a href="admin-dashboard.html" class="block px-4 py-2 rounded-xl nav-link hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Admin Dashboard</a>
+                </div>
+              </div>
+            </div>
             <button id="theme-toggle" aria-label="Toggle theme" class="rounded-full p-2 transition bg-white/80 dark:bg-neutral-800 hover:bg-white dark:hover:bg-neutral-700">
               <span id="theme-icon" class="block h-5 w-5">
                 <svg id="sun-icon" class="w-5 h-5 text-neutral-900 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -86,7 +99,18 @@
               <a href="about.html" class="nav-link py-2">About</a>
               <a href="contact.html" class="nav-link py-2">Contact</a>
               <a href="faq.html" class="nav-link py-2">FAQ</a>
-              <a href="dashboard.html" class="nav-link py-2">Dashboard</a>
+              <div class="relative">
+                <button class="nav-link py-2 w-full flex items-center justify-center gap-1" id="mobile-dashboard-dropdown-btn">
+                  Dashboard
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div id="mobile-dashboard-dropdown" class="hidden mt-2 space-y-2">
+                  <a href="user-dashboard.html" class="block nav-link py-2">User Dashboard</a>
+                  <a href="admin-dashboard.html" class="block nav-link py-2">Admin Dashboard</a>
+                </div>
+              </div>
               <div class="flex items-center justify-center gap-3">
                 <button id="theme-toggle-m" class="rounded-full p-2 transition bg-white/80 dark:bg-neutral-800 hover:bg-white dark:hover:bg-neutral-700">
                   <span id="theme-icon-m" class="block h-5 w-5">

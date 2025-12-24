@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Elysian Hotel — User Dashboard. Manage your bookings, profile, and preferences." />
+    <title>Elysian Hotel — My Dashboard</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' stroke='%23000' viewBox='0 0 24 24'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6'/%3E%3C/svg%3E" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = { darkMode: 'class' }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/tailwind.css" />
+  </head>
+  <body class="bg-neutral-50 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100 font-[Inter]">
+    <header id="navbar" class="relative z-50 transition-all">
+      <div class="mx-auto max-w-7xl px-4">
+        <div class="flex h-16 items-center justify-between">
+          <a href="index.html" class="flex items-center gap-2">
+            <svg class="h-8 w-8 text-neutral-900 dark:text-neutral-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+            </svg>
+            <span class="text-lg font-semibold">Elysian Hotel</span>
+          </a>
+          <nav class="hidden lg:flex items-center gap-8">
+            <div class="relative group" id="home-dropdown">
+              <button class="nav-link flex items-center gap-1" aria-expanded="false" aria-haspopup="true" id="home-dropdown-btn">
+                Home
+                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="absolute top-full left-0 pt-2 opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition-all duration-200 z-[100]">
+                <div class="glass-card rounded-2xl p-2 min-w-[200px] shadow-lg border border-neutral-200 dark:border-neutral-700">
+                  <a href="index.html" class="block px-4 py-2 rounded-xl nav-link hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Home</a>
+                  <a href="home2.html" class="block px-4 py-2 rounded-xl nav-link hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Home2</a>
+                </div>
+              </div>
+            </div>
+            <a href="rooms.html" class="nav-link">Rooms</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contact.html" class="nav-link">Contact</a>
+            <a href="faq.html" class="nav-link">FAQ</a>
+            <div class="relative group" id="dashboard-dropdown">
+              <button class="nav-link flex items-center gap-1" aria-expanded="false" aria-haspopup="true" id="dashboard-dropdown-btn">
+                Dashboard
+                <svg class="w-4 h-4 transition-transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              <div class="absolute top-full left-0 pt-2 opacity-0 invisible pointer-events-none group-hover:opacity-100 group-hover:visible group-hover:pointer-events-auto transition-all duration-200 z-[100]">
+                <div class="glass-card rounded-2xl p-2 min-w-[200px] shadow-lg border border-neutral-200 dark:border-neutral-700">
+                  <a href="user-dashboard.html" class="block px-4 py-2 rounded-xl nav-link hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">User Dashboard</a>
+                  <a href="admin-dashboard.html" class="block px-4 py-2 rounded-xl nav-link hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors">Admin Dashboard</a>
+                </div>
+              </div>
+            </div>
+            <button id="theme-toggle" aria-label="Toggle theme" class="rounded-full p-2 transition bg-white/80 dark:bg-neutral-800 hover:bg-white dark:hover:bg-neutral-700">
+              <span id="theme-icon" class="block h-5 w-5">
+                <svg id="sun-icon" class="w-5 h-5 text-neutral-900 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                </svg>
+                <svg id="moon-icon" class="w-5 h-5 text-neutral-100 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                </svg>
+              </span>
+            </button>
+            <a href="login.html" class="glass-card px-4 py-2 rounded-full text-sm font-medium">Login</a>
+            <a href="signup.html" class="glass-card px-4 py-2 rounded-full text-sm font-medium">Register</a>
+            <a href="rooms.html" class="neo-btn px-4 py-2 rounded-full text-sm font-medium">Book Now</a>
+          </nav>
+          <button id="mobile-toggle" class="lg:hidden rounded-full p-2 bg-white/80 dark:bg-neutral-800 hover:bg-white dark:hover:bg-neutral-700">
+            <svg class="h-5 w-5 text-neutral-900 dark:text-neutral-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div id="mobile-menu" class="lg:hidden hidden">
+        <div class="mx-auto max-w-7xl px-4 pb-4">
+          <div class="glass-card rounded-2xl p-4">
+            <div class="grid gap-3 text-center">
+              <div class="relative">
+                <button class="nav-link py-2 w-full flex items-center justify-center gap-1" id="mobile-home-dropdown-btn">
+                  Home
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div id="mobile-home-dropdown" class="hidden mt-2 space-y-2">
+                  <a href="index.html" class="block nav-link py-2">Home</a>
+                  <a href="home2.html" class="block nav-link py-2">Home2</a>
+                </div>
+              </div>
+              <a href="rooms.html" class="nav-link py-2">Rooms</a>
+              <a href="about.html" class="nav-link py-2">About</a>
+              <a href="contact.html" class="nav-link py-2">Contact</a>
+              <a href="faq.html" class="nav-link py-2">FAQ</a>
+              <div class="relative">
+                <button class="nav-link py-2 w-full flex items-center justify-center gap-1" id="mobile-dashboard-dropdown-btn">
+                  Dashboard
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+                <div id="mobile-dashboard-dropdown" class="hidden mt-2 space-y-2">
+                  <a href="user-dashboard.html" class="block nav-link py-2">User Dashboard</a>
+                  <a href="admin-dashboard.html" class="block nav-link py-2">Admin Dashboard</a>
+                </div>
+              </div>
+              <div class="flex items-center justify-center gap-3">
+                <button id="theme-toggle-m" class="rounded-full p-2 transition bg-white/80 dark:bg-neutral-800 hover:bg-white dark:hover:bg-neutral-700">
+                  <span id="theme-icon-m" class="block h-5 w-5">
+                    <svg id="sun-icon-m" class="w-5 h-5 text-neutral-900 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                    <svg id="moon-icon-m" class="w-5 h-5 text-neutral-100 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                  </span>
+                </button>
+                <a href="login.html" class="glass-card px-4 py-2 rounded-full text-sm font-medium card-hover">Login</a>
+                <a href="signup.html" class="glass-card px-4 py-2 rounded-full text-sm font-medium card-hover">Register</a>
+                <a href="rooms.html" class="neo-btn px-4 py-2 rounded-full text-sm font-medium">Book Now</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="pt-12 md:pt-16 pb-16">
+      <!-- User Dashboard Header -->
+      <section class="mx-auto max-w-7xl px-4 mb-8 reveal">
+        <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+          <div class="flex items-center gap-4">
+            <div class="h-16 w-16 rounded-full bg-gradient-to-br from-blue-500 to-purple-500 flex items-center justify-center text-white text-2xl font-bold">
+              JD
+            </div>
+            <div>
+              <h1 class="text-3xl md:text-4xl font-semibold mb-1">Welcome back, John!</h1>
+              <p class="text-neutral-600 dark:text-neutral-300">Manage your bookings, profile, and preferences</p>
+            </div>
+          </div>
+          <a href="rooms.html" class="neo-btn px-6 py-3 rounded-full text-base font-medium">Book New Stay</a>
+        </div>
+      </section>
+
+      <!-- User Stats Cards -->
+      <section class="mx-auto max-w-7xl px-4 mb-8 reveal">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div class="glass-card rounded-2xl p-6 card-hover">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-sm font-medium text-neutral-600 dark:text-neutral-300">Upcoming Bookings</h3>
+              <div class="h-10 w-10 rounded-xl bg-blue-500/10 flex items-center justify-center">
+                <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+              </div>
+            </div>
+            <div class="text-3xl font-semibold mb-1">3</div>
+            <div class="text-sm text-neutral-600 dark:text-neutral-300">Active reservations</div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 card-hover">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-sm font-medium text-neutral-600 dark:text-neutral-300">Total Spent</h3>
+              <div class="h-10 w-10 rounded-xl bg-green-500/10 flex items-center justify-center">
+                <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+            </div>
+            <div class="text-3xl font-semibold mb-1">$4,250</div>
+            <div class="text-sm text-green-600 dark:text-green-400">All time</div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 card-hover">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-sm font-medium text-neutral-600 dark:text-neutral-300">Reward Points</h3>
+              <div class="h-10 w-10 rounded-xl bg-purple-500/10 flex items-center justify-center">
+                <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                </svg>
+              </div>
+            </div>
+            <div class="text-3xl font-semibold mb-1">2,450</div>
+            <div class="text-sm text-neutral-600 dark:text-neutral-300">Available points</div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6 card-hover">
+            <div class="flex items-center justify-between mb-4">
+              <h3 class="text-sm font-medium text-neutral-600 dark:text-neutral-300">Member Since</h3>
+              <div class="h-10 w-10 rounded-xl bg-orange-500/10 flex items-center justify-center">
+                <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                </svg>
+              </div>
+            </div>
+            <div class="text-3xl font-semibold mb-1">2022</div>
+            <div class="text-sm text-neutral-600 dark:text-neutral-300">3 years</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Upcoming Bookings -->
+      <section class="mx-auto max-w-7xl px-4 mb-8 reveal">
+        <div class="glass-card rounded-2xl p-6">
+          <div class="flex items-center justify-between mb-6">
+            <h2 class="text-xl font-semibold">Upcoming Bookings</h2>
+            <a href="#" class="text-sm nav-link">View All</a>
+          </div>
+          <div class="space-y-4">
+            <div class="glass-card rounded-xl p-4 card-hover">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div class="flex gap-4">
+                  <img src="https://images.unsplash.com/photo-1631049307264-da0ec9d70304?w=200&h=150&fit=crop" alt="Deluxe Suite" class="h-24 w-32 rounded-xl object-cover" />
+                  <div>
+                    <h3 class="font-semibold mb-1">Deluxe Suite</h3>
+                    <p class="text-sm text-neutral-600 dark:text-neutral-300 mb-2">Check-in: Mar 25, 2025 • Check-out: Mar 28, 2025</p>
+                    <div class="flex items-center gap-4 text-xs text-neutral-600 dark:text-neutral-300">
+                      <span>2 Guests</span>
+                      <span>3 Nights</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col md:items-end gap-2">
+                  <div class="text-xl font-semibold">$567</div>
+                  <span class="px-3 py-1 rounded-full text-xs font-medium bg-green-500/10 text-green-600 dark:text-green-400">Confirmed</span>
+                  <div class="flex gap-2 mt-2">
+                    <button class="text-xs glass-card px-3 py-1 rounded-full card-hover view-details-btn">View Details</button>
+                    <button class="text-xs neo-btn px-3 py-1 rounded-full modify-btn">Modify</button>
+                    <button class="text-xs glass-card px-3 py-1 rounded-full card-hover cancel-btn" style="color: rgb(239 68 68);">Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card rounded-xl p-4 card-hover">
+              <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+                <div class="flex gap-4">
+                  <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?w=200&h=150&fit=crop" alt="Executive Room" class="h-24 w-32 rounded-xl object-cover" />
+                  <div>
+                    <h3 class="font-semibold mb-1">Executive Room</h3>
+                    <p class="text-sm text-neutral-600 dark:text-neutral-300 mb-2">Check-in: Apr 5, 2025 • Check-out: Apr 8, 2025</p>
+                    <div class="flex items-center gap-4 text-xs text-neutral-600 dark:text-neutral-300">
+                      <span>1 Guest</span>
+                      <span>3 Nights</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="flex flex-col md:items-end gap-2">
+                  <div class="text-xl font-semibold">$477</div>
+                  <span class="px-3 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-600 dark:text-blue-400">Pending</span>
+                  <div class="flex gap-2 mt-2">
+                    <button class="text-xs glass-card px-3 py-1 rounded-full card-hover view-details-btn">View Details</button>
+                    <button class="text-xs neo-btn px-3 py-1 rounded-full modify-btn">Modify</button>
+                    <button class="text-xs glass-card px-3 py-1 rounded-full card-hover cancel-btn" style="color: rgb(239 68 68);">Cancel</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Transaction History -->
+      <section class="mx-auto max-w-7xl px-4 mb-8 reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          <div class="lg:col-span-2 glass-card rounded-2xl p-6">
+            <div class="flex items-center justify-between mb-6">
+              <h2 class="text-xl font-semibold">Transaction History</h2>
+              <select class="input text-sm py-1 px-3">
+                <option>Last 30 days</option>
+                <option>Last 3 months</option>
+                <option>Last 6 months</option>
+                <option>All time</option>
+              </select>
+            </div>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between p-4 glass-card rounded-xl">
+                <div class="flex items-center gap-4">
+                  <div class="h-12 w-12 rounded-lg bg-green-500/10 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="font-medium">Deluxe Suite Booking</div>
+                    <div class="text-sm text-neutral-600 dark:text-neutral-300">Mar 15, 2025 • Payment successful</div>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <div class="font-semibold text-green-600 dark:text-green-400">-$567.00</div>
+                  <div class="text-xs text-neutral-500">Card ending 4567</div>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between p-4 glass-card rounded-xl">
+                <div class="flex items-center gap-4">
+                  <div class="h-12 w-12 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="font-medium">Reward Points Redeemed</div>
+                    <div class="text-sm text-neutral-600 dark:text-neutral-300">Mar 10, 2025 • 500 points</div>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <div class="font-semibold text-blue-600 dark:text-blue-400">-$50.00</div>
+                  <div class="text-xs text-neutral-500">Points discount</div>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between p-4 glass-card rounded-xl">
+                <div class="flex items-center gap-4">
+                  <div class="h-12 w-12 rounded-lg bg-green-500/10 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="font-medium">Executive Room Booking</div>
+                    <div class="text-sm text-neutral-600 dark:text-neutral-300">Feb 28, 2025 • Payment successful</div>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <div class="font-semibold text-green-600 dark:text-green-400">-$477.00</div>
+                  <div class="text-xs text-neutral-500">Card ending 4567</div>
+                </div>
+              </div>
+
+              <div class="flex items-center justify-between p-4 glass-card rounded-xl">
+                <div class="flex items-center gap-4">
+                  <div class="h-12 w-12 rounded-lg bg-purple-500/10 flex items-center justify-center">
+                    <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="font-medium">Points Earned</div>
+                    <div class="text-sm text-neutral-600 dark:text-neutral-300">Feb 28, 2025 • Booking reward</div>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <div class="font-semibold text-purple-600 dark:text-purple-400">+477</div>
+                  <div class="text-xs text-neutral-500">Reward points</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Profile Quick Actions -->
+          <div class="glass-card rounded-2xl p-6">
+            <h2 class="text-xl font-semibold mb-6">Quick Actions</h2>
+            <div class="space-y-3">
+              <a href="#" class="block glass-card p-4 rounded-xl card-hover">
+                <div class="flex items-center gap-3">
+                  <div class="h-10 w-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="font-medium text-sm">Edit Profile</div>
+                    <div class="text-xs text-neutral-600 dark:text-neutral-300">Update your information</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="block glass-card p-4 rounded-xl card-hover">
+                <div class="flex items-center gap-3">
+                  <div class="h-10 w-10 rounded-lg bg-green-500/10 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="font-medium text-sm">Change Password</div>
+                    <div class="text-xs text-neutral-600 dark:text-neutral-300">Update security</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="block glass-card p-4 rounded-xl card-hover">
+                <div class="flex items-center gap-3">
+                  <div class="h-10 w-10 rounded-lg bg-purple-500/10 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="font-medium text-sm">Preferences</div>
+                    <div class="text-xs text-neutral-600 dark:text-neutral-300">Notification settings</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="block glass-card p-4 rounded-xl card-hover">
+                <div class="flex items-center gap-3">
+                  <div class="h-10 w-10 rounded-lg bg-orange-500/10 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-orange-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="font-medium text-sm">Download Invoice</div>
+                    <div class="text-xs text-neutral-600 dark:text-neutral-300">Get receipts</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking History -->
+      <section class="mx-auto max-w-7xl px-4 reveal">
+        <div class="glass-card rounded-2xl p-6">
+          <div class="flex items-center justify-between mb-6">
+            <h2 class="text-xl font-semibold">Booking History</h2>
+            <a href="#" class="text-sm nav-link">View All</a>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead>
+                <tr class="border-b border-neutral-200 dark:border-neutral-800">
+                  <th class="text-left py-3 px-4 text-sm font-semibold text-neutral-600 dark:text-neutral-300">Room</th>
+                  <th class="text-left py-3 px-4 text-sm font-semibold text-neutral-600 dark:text-neutral-300">Dates</th>
+                  <th class="text-left py-3 px-4 text-sm font-semibold text-neutral-600 dark:text-neutral-300">Guests</th>
+                  <th class="text-left py-3 px-4 text-sm font-semibold text-neutral-600 dark:text-neutral-300">Amount</th>
+                  <th class="text-left py-3 px-4 text-sm font-semibold text-neutral-600 dark:text-neutral-300">Status</th>
+                  <th class="text-left py-3 px-4 text-sm font-semibold text-neutral-600 dark:text-neutral-300">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-neutral-200 dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors">
+                  <td class="py-3 px-4">
+                    <div class="font-medium text-sm">Deluxe Suite</div>
+                    <div class="text-xs text-neutral-500">Booking #BK-2025-001</div>
+                  </td>
+                  <td class="py-3 px-4 text-sm">Mar 15 - Mar 18, 2025</td>
+                  <td class="py-3 px-4 text-sm">2 Guests</td>
+                  <td class="py-3 px-4 text-sm font-semibold">$567</td>
+                  <td class="py-3 px-4">
+                    <span class="px-2 py-1 rounded-full text-xs font-medium bg-green-500/10 text-green-600 dark:text-green-400">Completed</span>
+                  </td>
+                  <td class="py-3 px-4">
+                    <button class="text-sm nav-link">View</button>
+                  </td>
+                </tr>
+                <tr class="border-b border-neutral-200 dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors">
+                  <td class="py-3 px-4">
+                    <div class="font-medium text-sm">Executive Room</div>
+                    <div class="text-xs text-neutral-500">Booking #BK-2025-002</div>
+                  </td>
+                  <td class="py-3 px-4 text-sm">Feb 20 - Feb 23, 2025</td>
+                  <td class="py-3 px-4 text-sm">1 Guest</td>
+                  <td class="py-3 px-4 text-sm font-semibold">$477</td>
+                  <td class="py-3 px-4">
+                    <span class="px-2 py-1 rounded-full text-xs font-medium bg-green-500/10 text-green-600 dark:text-green-400">Completed</span>
+                  </td>
+                  <td class="py-3 px-4">
+                    <button class="text-sm nav-link">View</button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors">
+                  <td class="py-3 px-4">
+                    <div class="font-medium text-sm">Family Room</div>
+                    <div class="text-xs text-neutral-500">Booking #BK-2024-089</div>
+                  </td>
+                  <td class="py-3 px-4 text-sm">Dec 10 - Dec 12, 2024</td>
+                  <td class="py-3 px-4 text-sm">4 Guests</td>
+                  <td class="py-3 px-4 text-sm font-semibold">$417</td>
+                  <td class="py-3 px-4">
+                    <span class="px-2 py-1 rounded-full text-xs font-medium bg-green-500/10 text-green-600 dark:text-green-400">Completed</span>
+                  </td>
+                  <td class="py-3 px-4">
+                    <button class="text-sm nav-link">View</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="mt-24 border-t border-neutral-200 dark:border-neutral-800">
+      <div class="mx-auto max-w-7xl px-4 py-12">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div class="text-center sm:text-left">
+            <div class="flex items-center justify-center sm:justify-start gap-3">
+              <svg class="h-8 w-8 text-neutral-900 dark:text-neutral-100" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+              </svg>
+              <span class="text-lg font-semibold">Elysian Hotel</span>
+            </div>
+            <p class="mt-3 text-sm text-neutral-600 dark:text-neutral-300">Quiet stays, refined details, and seamless booking.</p>
+          </div>
+          <div class="text-center sm:text-left">
+            <h5 class="font-semibold">Navigation</h5>
+            <ul class="mt-3 space-y-2 text-sm">
+              <li><a href="index.html" class="nav-link">Home</a></li>
+              <li><a href="rooms.html" class="nav-link">Rooms</a></li>
+              <li><a href="about.html" class="nav-link">About</a></li>
+              <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+          </div>
+          <div class="text-center sm:text-left">
+            <h5 class="font-semibold">Policies</h5>
+            <ul class="mt-3 space-y-2 text-sm">
+              <li><a href="privacy.html" class="nav-link">Privacy Policy</a></li>
+              <li><a href="terms.html" class="nav-link">Terms of Service</a></li>
+              <li><a href="cancellation.html" class="nav-link">Cancellation Policy</a></li>
+            </ul>
+          </div>
+          <div class="text-center sm:text-left">
+            <h5 class="font-semibold">Newsletter</h5>
+            <form class="mt-3 flex gap-3 justify-center sm:justify-start">
+              <input type="email" placeholder="Your email" class="input w-full max-w-[210px]" />
+              <button class="neo-btn px-4 py-2 rounded-full text-sm">Subscribe</button>
+            </form>
+          </div>
+        </div>
+        <p class="mt-8 text-center text-sm text-neutral-500 dark:text-neutral-400">© 2025 Elysian Hotel</p>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
+  </body>
+</html>
+

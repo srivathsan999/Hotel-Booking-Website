@@ -141,8 +141,15 @@
       <section class="mx-auto max-w-7xl px-4 mb-8 reveal">
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
           <div>
-            <h1 class="text-3xl md:text-4xl font-semibold mb-2">Admin Dashboard</h1>
-            <p class="text-neutral-600 dark:text-neutral-300">Manage your hotel operations and bookings</p>
+            <div class="flex items-center gap-4">
+              <div class="h-16 w-16 rounded-full bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center text-white text-2xl font-bold">
+                A
+              </div>
+              <div>
+                <h1 class="text-3xl md:text-4xl font-semibold mb-2">Admin Dashboard</h1>
+                <p class="text-neutral-600 dark:text-neutral-300">Manage hotel operations, users, and system settings</p>
+              </div>
+            </div>
           </div>
           <div class="flex gap-3">
             <button class="glass-card px-4 py-2 rounded-full text-sm font-medium card-hover">Export Data</button>
@@ -487,7 +494,10 @@
                   </td>
                   <td class="py-3 px-4 text-sm font-semibold">$567</td>
                   <td class="py-3 px-4">
-                    <button class="text-sm nav-link">View</button>
+                    <div class="flex gap-2">
+                      <button class="text-sm nav-link">View</button>
+                      <button class="text-sm nav-link" style="color: rgb(239 68 68);">Cancel</button>
+                    </div>
                   </td>
                 </tr>
                 <tr class="border-b border-neutral-200 dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors">
@@ -508,7 +518,10 @@
                   </td>
                   <td class="py-3 px-4 text-sm font-semibold">$636</td>
                   <td class="py-3 px-4">
-                    <button class="text-sm nav-link">View</button>
+                    <div class="flex gap-2">
+                      <button class="text-sm nav-link">View</button>
+                      <button class="text-sm nav-link" style="color: rgb(239 68 68);">Cancel</button>
+                    </div>
                   </td>
                 </tr>
                 <tr class="border-b border-neutral-200 dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors">
@@ -529,7 +542,10 @@
                   </td>
                   <td class="py-3 px-4 text-sm font-semibold">$417</td>
                   <td class="py-3 px-4">
-                    <button class="text-sm nav-link">View</button>
+                    <div class="flex gap-2">
+                      <button class="text-sm nav-link">View</button>
+                      <button class="text-sm nav-link" style="color: rgb(239 68 68);">Cancel</button>
+                    </div>
                   </td>
                 </tr>
                 <tr class="border-b border-neutral-200 dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors">
@@ -550,7 +566,10 @@
                   </td>
                   <td class="py-3 px-4 text-sm font-semibold">$756</td>
                   <td class="py-3 px-4">
-                    <button class="text-sm nav-link">View</button>
+                    <div class="flex gap-2">
+                      <button class="text-sm nav-link">View</button>
+                      <button class="text-sm nav-link" style="color: rgb(239 68 68);">Cancel</button>
+                    </div>
                   </td>
                 </tr>
                 <tr class="hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors">
@@ -571,7 +590,10 @@
                   </td>
                   <td class="py-3 px-4 text-sm font-semibold">$477</td>
                   <td class="py-3 px-4">
-                    <button class="text-sm nav-link">View</button>
+                    <div class="flex gap-2">
+                      <button class="text-sm nav-link">View</button>
+                      <button class="text-sm nav-link" style="color: rgb(239 68 68);">Cancel</button>
+                    </div>
                   </td>
                 </tr>
               </tbody>
@@ -645,6 +667,214 @@
           </div>
         </div>
       </section>
+
+      <!-- User Management Section -->
+      <section class="mx-auto max-w-7xl px-4 mb-8 reveal">
+        <div class="glass-card rounded-2xl p-6">
+          <div class="flex items-center justify-between mb-6">
+            <h2 class="text-xl font-semibold">User Management</h2>
+            <button class="neo-btn px-4 py-2 rounded-full text-sm font-medium">Add User</button>
+          </div>
+          <div class="overflow-x-auto">
+            <table class="w-full">
+              <thead>
+                <tr class="border-b border-neutral-200 dark:border-neutral-800">
+                  <th class="text-left py-3 px-4 text-sm font-semibold text-neutral-600 dark:text-neutral-300">User</th>
+                  <th class="text-left py-3 px-4 text-sm font-semibold text-neutral-600 dark:text-neutral-300">Email</th>
+                  <th class="text-left py-3 px-4 text-sm font-semibold text-neutral-600 dark:text-neutral-300">Role</th>
+                  <th class="text-left py-3 px-4 text-sm font-semibold text-neutral-600 dark:text-neutral-300">Status</th>
+                  <th class="text-left py-3 px-4 text-sm font-semibold text-neutral-600 dark:text-neutral-300">Last Login</th>
+                  <th class="text-left py-3 px-4 text-sm font-semibold text-neutral-600 dark:text-neutral-300">Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-neutral-200 dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="h-8 w-8 rounded-full bg-gradient-to-br from-blue-500 to-purple-500"></div>
+                      <div class="font-medium text-sm">John Doe</div>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 text-sm">john@example.com</td>
+                  <td class="py-3 px-4">
+                    <span class="px-2 py-1 rounded-full text-xs font-medium bg-blue-500/10 text-blue-600 dark:text-blue-400">Admin</span>
+                  </td>
+                  <td class="py-3 px-4">
+                    <span class="px-2 py-1 rounded-full text-xs font-medium bg-green-500/10 text-green-600 dark:text-green-400">Active</span>
+                  </td>
+                  <td class="py-3 px-4 text-sm">2 hours ago</td>
+                  <td class="py-3 px-4">
+                    <button class="text-sm nav-link">Edit</button>
+                  </td>
+                </tr>
+                <tr class="border-b border-neutral-200 dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="h-8 w-8 rounded-full bg-gradient-to-br from-green-500 to-teal-500"></div>
+                      <div class="font-medium text-sm">Sarah Chen</div>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 text-sm">sarah@example.com</td>
+                  <td class="py-3 px-4">
+                    <span class="px-2 py-1 rounded-full text-xs font-medium bg-purple-500/10 text-purple-600 dark:text-purple-400">Staff</span>
+                  </td>
+                  <td class="py-3 px-4">
+                    <span class="px-2 py-1 rounded-full text-xs font-medium bg-green-500/10 text-green-600 dark:text-green-400">Active</span>
+                  </td>
+                  <td class="py-3 px-4 text-sm">1 day ago</td>
+                  <td class="py-3 px-4">
+                    <button class="text-sm nav-link">Edit</button>
+                  </td>
+                </tr>
+                <tr class="border-b border-neutral-200 dark:border-neutral-800 hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="h-8 w-8 rounded-full bg-gradient-to-br from-orange-500 to-red-500"></div>
+                      <div class="font-medium text-sm">Michael Park</div>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 text-sm">michael@example.com</td>
+                  <td class="py-3 px-4">
+                    <span class="px-2 py-1 rounded-full text-xs font-medium bg-purple-500/10 text-purple-600 dark:text-purple-400">Staff</span>
+                  </td>
+                  <td class="py-3 px-4">
+                    <span class="px-2 py-1 rounded-full text-xs font-medium bg-yellow-500/10 text-yellow-600 dark:text-yellow-400">Pending</span>
+                  </td>
+                  <td class="py-3 px-4 text-sm">Never</td>
+                  <td class="py-3 px-4">
+                    <button class="text-sm nav-link">Edit</button>
+                  </td>
+                </tr>
+                <tr class="hover:bg-neutral-50 dark:hover:bg-neutral-800/50 transition-colors">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="h-8 w-8 rounded-full bg-gradient-to-br from-pink-500 to-rose-500"></div>
+                      <div class="font-medium text-sm">Emma Wilson</div>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 text-sm">emma@example.com</td>
+                  <td class="py-3 px-4">
+                    <span class="px-2 py-1 rounded-full text-xs font-medium bg-gray-500/10 text-gray-600 dark:text-gray-400">Guest</span>
+                  </td>
+                  <td class="py-3 px-4">
+                    <span class="px-2 py-1 rounded-full text-xs font-medium bg-green-500/10 text-green-600 dark:text-green-400">Active</span>
+                  </td>
+                  <td class="py-3 px-4 text-sm">3 days ago</td>
+                  <td class="py-3 px-4">
+                    <button class="text-sm nav-link">Edit</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- System Settings & Admin Tools -->
+      <section class="mx-auto max-w-7xl px-4 reveal">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div class="glass-card rounded-2xl p-6">
+            <h2 class="text-xl font-semibold mb-6">System Settings</h2>
+            <div class="space-y-4">
+              <div class="flex items-center justify-between p-4 glass-card rounded-xl">
+                <div>
+                  <div class="font-medium text-sm">Maintenance Mode</div>
+                  <div class="text-xs text-neutral-600 dark:text-neutral-300">Temporarily disable bookings</div>
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer">
+                  <input type="checkbox" class="sr-only peer">
+                  <div class="w-11 h-6 bg-neutral-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-neutral-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-neutral-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-neutral-600 peer-checked:bg-blue-600"></div>
+                </label>
+              </div>
+              <div class="flex items-center justify-between p-4 glass-card rounded-xl">
+                <div>
+                  <div class="font-medium text-sm">Email Notifications</div>
+                  <div class="text-xs text-neutral-600 dark:text-neutral-300">Send booking confirmations</div>
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer">
+                  <input type="checkbox" checked class="sr-only peer">
+                  <div class="w-11 h-6 bg-neutral-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-neutral-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-neutral-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-neutral-600 peer-checked:bg-blue-600"></div>
+                </label>
+              </div>
+              <div class="flex items-center justify-between p-4 glass-card rounded-xl">
+                <div>
+                  <div class="font-medium text-sm">Auto Check-in</div>
+                  <div class="text-xs text-neutral-600 dark:text-neutral-300">Automatically process check-ins</div>
+                </div>
+                <label class="relative inline-flex items-center cursor-pointer">
+                  <input type="checkbox" class="sr-only peer">
+                  <div class="w-11 h-6 bg-neutral-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-neutral-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-neutral-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-neutral-600 peer-checked:bg-blue-600"></div>
+                </label>
+              </div>
+              <div class="flex items-center justify-between p-4 glass-card rounded-xl">
+                <div>
+                  <div class="font-medium text-sm">Backup System</div>
+                  <div class="text-xs text-neutral-600 dark:text-neutral-300">Last backup: 2 hours ago</div>
+                </div>
+                <button class="text-xs neo-btn px-3 py-1 rounded-full">Backup Now</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="glass-card rounded-2xl p-6">
+            <h2 class="text-xl font-semibold mb-6">Admin Tools</h2>
+            <div class="space-y-3">
+              <a href="#" class="block glass-card p-4 rounded-xl card-hover">
+                <div class="flex items-center gap-3">
+                  <div class="h-10 w-10 rounded-lg bg-red-500/10 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="font-medium text-sm">System Logs</div>
+                    <div class="text-xs text-neutral-600 dark:text-neutral-300">View system activity</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="block glass-card p-4 rounded-xl card-hover">
+                <div class="flex items-center gap-3">
+                  <div class="h-10 w-10 rounded-lg bg-yellow-500/10 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-yellow-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="font-medium text-sm">Security Settings</div>
+                    <div class="text-xs text-neutral-600 dark:text-neutral-300">Manage access controls</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="block glass-card p-4 rounded-xl card-hover">
+                <div class="flex items-center gap-3">
+                  <div class="h-10 w-10 rounded-lg bg-blue-500/10 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="font-medium text-sm">Database Management</div>
+                    <div class="text-xs text-neutral-600 dark:text-neutral-300">Export/Import data</div>
+                  </div>
+                </div>
+              </a>
+              <a href="#" class="block glass-card p-4 rounded-xl card-hover">
+                <div class="flex items-center gap-3">
+                  <div class="h-10 w-10 rounded-lg bg-green-500/10 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="font-medium text-sm">Analytics & Reports</div>
+                    <div class="text-xs text-neutral-600 dark:text-neutral-300">Generate detailed reports</div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <footer class="mt-24 border-t border-neutral-200 dark:border-neutral-800">
@@ -689,6 +919,7 @@
     </footer>
 
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard.js"></script>
   </body>
 </html>
 
