@@ -536,8 +536,74 @@
     document.head.appendChild(style)
   }
 
+  // Sidebar Navigation Functions
+  function initSidebar() {
+    const sidebar = document.getElementById('sidebar')
+    const sidebarToggle = document.getElementById('sidebar-toggle')
+    const sidebarOverlay = document.getElementById('sidebar-overlay')
+
+    if (!sidebar || !sidebarToggle) return
+
+    const openSidebar = () => {
+      sidebar.classList.remove('-translate-x-full')
+      if (sidebarOverlay) {
+        sidebarOverlay.classList.remove('hidden')
+      }
+      document.body.style.overflow = 'hidden'
+    }
+
+    const closeSidebar = () => {
+      sidebar.classList.add('-translate-x-full')
+      if (sidebarOverlay) {
+        sidebarOverlay.classList.add('hidden')
+      }
+      document.body.style.overflow = ''
+    }
+
+    // Toggle sidebar
+    sidebarToggle.addEventListener('click', () => {
+      if (sidebar.classList.contains('-translate-x-full')) {
+        openSidebar()
+      } else {
+        closeSidebar()
+      }
+    })
+
+    // Close sidebar when clicking overlay
+    if (sidebarOverlay) {
+      sidebarOverlay.addEventListener('click', closeSidebar)
+    }
+
+    // Close sidebar when clicking a link (mobile only)
+    const sidebarLinks = sidebar.querySelectorAll('a')
+    sidebarLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth < 1024) {
+          closeSidebar()
+        }
+      })
+    })
+
+    // Close sidebar on window resize if desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth >= 1024) {
+        closeSidebar()
+      }
+    })
+
+    // Handle escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !sidebar.classList.contains('-translate-x-full')) {
+        closeSidebar()
+      }
+    })
+  }
+
   // Initialize when DOM is ready
   function initDashboards() {
+    // Initialize sidebar navigation
+    initSidebar()
+
     // Check for specific elements to determine which dashboard
     const h1 = document.querySelector('h1')
     const pageTitle = document.title.toLowerCase()
